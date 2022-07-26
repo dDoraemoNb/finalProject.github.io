@@ -9,7 +9,7 @@ export const DailyRecommend = () => {
   return (
     <div className="DailyRecommend">
       <div>
-        <span>Daily Recommend</span>
+        <p>Daily Recommend</p>
       </div>
       <div className="DailyRecommend-img">
         <img src={img1} />
