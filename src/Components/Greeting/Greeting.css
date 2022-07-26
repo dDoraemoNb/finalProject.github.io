@@ -1,0 +1,31 @@
+.sayhi-user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 180px;
+    background-color: #FFE69A;
+    border-radius: 20px;
+    padding: 20px 40px;
+    color: #FFB830;
+}
+
+.sayhi-title{
+    color: black;
+    font-size: 29px;
+    line-height: 70px;
+    text-align: left;
+}
+
+.sayhi-user-text h3{
+    font-size: 29px;
+    line-height: 70px;
+
+}
+
+.reward-image{
+    width: 200px;
+}
+.name{
+    color: black;
+    font-size: 40px;
+}
