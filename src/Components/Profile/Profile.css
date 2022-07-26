@@ -1,0 +1,11 @@
+.profile{
+    margin: 0 auto;
+}
+.profile img {
+    border-radius: 50%;
+    width: 25%;
+}
+.profile span{
+    margin: 0 1em;
+    font-size: 2em;
+}
