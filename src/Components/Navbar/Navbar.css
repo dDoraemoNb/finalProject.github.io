@@ -4,12 +4,11 @@
     align-items: center;
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(255,86,39,1) 0%, rgba(201,0,53,1) 100%);
-    width: 1200px;
     border-radius: 20px;
+    padding: 20px;
 }
 
 .logo{
-    padding: -1.5em;
     width: 70px;
     height: auto;
 }
@@ -24,7 +23,7 @@
 }
 
 .Navbar a{
-    padding: 30px;
+    padding-left: 30px;
 }
 
 .Navbar a hover{
