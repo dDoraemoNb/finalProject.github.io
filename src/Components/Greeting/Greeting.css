@@ -16,6 +16,10 @@
     text-align: left;
 }
 
+.sayhi-description{
+    color: black;
+}
+
 .sayhi-user-text h3{
     font-size: 29px;
     line-height: 70px;
