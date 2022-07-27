@@ -1,11 +1,15 @@
 .DailyRecommend {
-    border: 1px solid red;
-    padding: 20px;
+    /* border: 1px solid red; */
     flex-direction: column;
+    
 }
 
 .DailyRecommend p {
     text-align: left;
+    margin-top: 0px;
+    color: #6F6F6F;
+    font-weight: bold;
+    font-size: larger;
 }
 
 
@@ -19,4 +23,6 @@
     display: inline-block;
     width: 100%;
     height: 100px;
+    margin: 30px 30px;
+
 }
