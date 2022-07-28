@@ -1,0 +1,39 @@
+.AddActivities {
+    
+    background-color: #F5F5F5;
+    margin: 0, auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+
+
+.AddActivitiesForm input {
+    background-color: white;
+    margin: 0 30px;
+
+}
+
+.AddActivitiesForm ::placeholder {
+    color: #6F6F6F;
+    font-weight: bold;
+
+}
+
+.description {
+    color: #D9D9D9;
+    margin-top: 10px;
+
+}
+.button{
+    justify-content: flex-end;
+}
+.buttonPost {
+    background-color: #F8763D;
+    color: white;
+    scroll-margin-block: 0;
+    width: 100px;
+    height: 40px;
+   
+}
