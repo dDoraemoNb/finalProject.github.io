@@ -1,0 +1,32 @@
+.main-dashboard{
+    background: linear-gradient(
+        to right,
+        #fff 0%,
+        #fff 69%,
+        rgba(255, 202, 178, 1) 0%,
+        rgba(201,0,53,1)31%  
+      );
+    padding: 2rem;
+}
+.content{
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+}
+.Dashboard{
+    background-color: #F5F5F5;
+    border-radius: 30px;
+    margin:0 auto;
+    padding:50px;
+}
+.left-content{
+/* margin-right: 25px; */
+margin: 0 auto;
+width: 70%;
+}
+.right-content{
+    background-color: white;
+    border-radius: 20px;
+    margin-left: 50px;
+    width: 30%;
+}
