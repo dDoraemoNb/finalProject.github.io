@@ -4,4 +4,14 @@
   /* padding: 2rem; */
   
 }
+.main-web{
+  background: linear-gradient(
+      to right,
+      #fff 0%,
+      #fff 69%,
+      rgba(255, 202, 178, 1) 0%,
+      rgba(201,0,53,1)31%  
+    );
+  padding: 2rem;
+}
 

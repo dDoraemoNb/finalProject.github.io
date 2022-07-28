@@ -2,8 +2,8 @@ import { useState } from 'react'
 import reactLogo from './react.svg'
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Dashboard from './Pages/Dashboard'
-
+import Dashboard from './Pages/Dashboard/Dashboard'
+import Activity from './Pages/Activity/Activity'
 const App = () => {
   const [count, setCount] = useState(0)
   const [selectedActivity, setSelectActivity] = useState();
@@ -11,13 +11,13 @@ const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
-            
+
         <Routes>
 
-          <Route path="/" element={<Dashboard />} >
-            {/* <Route index element={<ActivityList />} ></Route> */}
-            {/* <Route path="" element={<Dashboard />} ></Route> */}
-          </Route>
+          <Route index element={<Dashboard />} ></Route>
+          <Route path="/activity" element={<Activity />} ></Route>
+          {/* <Route path="" element={<Dashboard />} ></Route> */}
+
 
           {/* <Route path="/" element={<ListActivity />} ></Route>
           <Route path="/" element={<AddActivity />} ></Route> */}
