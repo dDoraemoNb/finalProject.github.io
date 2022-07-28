@@ -4,18 +4,20 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Dashboard from './Pages/Dashboard/Dashboard'
 import Activity from './Pages/Activity/Activity'
-const App = () => {
+import Login from './Pages/Login/Login'
+import Signup from './Pages/Login/Signup'
+
+const App = (props) => {
   const [count, setCount] = useState(0)
   const [selectedActivity, setSelectActivity] = useState();
+  const token = true
 
-  return (
-    <div className="App">
+  if (token) {
+    return (
       <BrowserRouter>
-
         <Routes>
-
           <Route index element={<Dashboard />} ></Route>
-          <Route path="/activity" element={<Activity />} ></Route>
+          <Route path="activity" element={<Activity />} ></Route>
           {/* <Route path="" element={<Dashboard />} ></Route> */}
 
 
@@ -23,17 +25,30 @@ const App = () => {
           <Route path="/" element={<AddActivity />} ></Route> */}
         </Routes>
       </BrowserRouter>
+    )
+  } else {
+    if(!window.location.href){
+      window.location.href = "login"; //replace with your url
+    }else{
+      
+    }
+      
+    return (
+      <BrowserRouter>
+        <Routes>
+          <Route path='login' element={<Login />} ></Route>
+          <Route path='signup' element={<Signup />} ></Route>
+        </Routes>
+      </BrowserRouter>
+    )
+  }
 
-      {/* <div className="content">
-        <div className="Dashboard">
-          <Dashboard />
-        </div>
-        <div className="Profile">
-          <Profile />
-        </div>
-      </div> */}
-    </div>
-  )
+
+  // return (
+  //   <div className="App">
+  //     {Page()}
+  //   </div>
+  // )
 }
 
 export default App

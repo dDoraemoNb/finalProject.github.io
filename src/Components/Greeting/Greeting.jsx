@@ -2,7 +2,7 @@ import React from "react";
 import './Greeting.css';
 import winner from '../../../public/winner.svg'
 
-function Greeting(props) {
+const Greeting=(props)=> {
     return (
         <div class="sayhi-user">
             <div class="sayhi-user-text">

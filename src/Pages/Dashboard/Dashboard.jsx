@@ -19,8 +19,8 @@ const Dashboard = (props) => {
                             <p>DashBoard</p>
                             <div className='top-left-content'>
 
-                                <a className='frame'>+Add Activity</a>
-                                <a className='frame1'>+Add Challenge</a>
+                                <a href="" className='frame'>+Add Activity</a>
+                                <a href="" className='frame1'>+Add Challenge</a>
                             </div>
                         </div>
                         <ContentDashboard />

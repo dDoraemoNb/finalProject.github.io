@@ -3,7 +3,7 @@ import ActivitySearch from '../../Components/ActivitySearch/ActivitySearch'
 import Navbar from '../../Components/Navbar/Navbar'
 import './Activity.css'
 
-const Dashboard = (props) => {
+const Activity = (props) => {
 
     return (
         <div className='main-web'>
@@ -18,4 +18,4 @@ const Dashboard = (props) => {
     )
 }
 
-export default Dashboard
+export default Activity
