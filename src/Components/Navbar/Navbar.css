@@ -1,0 +1,33 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(255,86,39,1) 0%, rgba(201,0,53,1) 100%);
+  
+    border-radius: 20px;
+    padding:20px;
+}
+
+.logo{
+    
+    width: 70px;
+    height: auto;
+}
+
+.Navbar{
+    align-items: center;
+}
+
+.Navbar img{
+    width: 35px;
+    height: 35px;
+}
+
+.Navbar a{
+    padding: 30px;
+}
+
+.Navbar a hover{
+    padding: 60px;
+}
