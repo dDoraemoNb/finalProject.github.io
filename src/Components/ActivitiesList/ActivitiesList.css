@@ -1,0 +1,53 @@
+.activities-description p{
+    margin: auto;
+}
+.title{
+    display: flex;
+    align-items: center;
+    gap: 10px;;
+}
+
+.activities-list {
+    margin: 50;
+    align-items: center;
+}
+
+.title img {
+    height: 35px;
+    align-items: left;
+}
+
+.activities-title {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #F8763D;
+    height: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    align-items: center;
+}
+
+h4.activities-list-title {
+    color: white;
+    align-items: left;
+}
+
+p.activity-type {
+    color: white;
+    align-items: right;
+}
+
+.activities-description {
+    display: flex-start;
+    height: 50px;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    align-items: center;
+    text-indent: 20px;
+    line-height: 2;
+}
+.activities-list-form {
+    margin-bottom: 20px;;
+}

@@ -3,7 +3,7 @@ import './ContentDashboard.css'
 import DailyRecommend from '../DailyRecommend/DailyRecommend'
 import Greeting from '../Greeting/Greeting'
 
-const App = () => {
+const ContentDashboard = () => {
 
 
     return (
@@ -17,4 +17,4 @@ const App = () => {
 
 }
 
-export default App
+export default ContentDashboard
