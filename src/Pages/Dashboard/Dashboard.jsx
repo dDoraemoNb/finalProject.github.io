@@ -3,6 +3,7 @@ import Profile from '../../Components/Profile/Profile'
 import ContentDashboard from '../../Components/ContentDashboard/ContentDashboard'
 import Navbar from '../../Components/Navbar/Navbar'
 import './Dashboard.css'
+import ActivitiesList from '../../Components/ActivitiesList/ActivitiesList'
 
 const Dashboard = (props) => {
 
@@ -19,11 +20,12 @@ const Dashboard = (props) => {
                             <p>DashBoard</p>
                             <div className='top-left-content'>
 
-                                <a href="" className='frame'>+Add Activity</a>
+                                <a href="add" className='frame'>+Add Activity</a>
                                 <a href="" className='frame1'>+Add Challenge</a>
                             </div>
                         </div>
                         <ContentDashboard />
+                        <ActivitiesList />
                     </div>
                     <div className="right-content">
                         <Profile />

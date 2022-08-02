@@ -6,6 +6,7 @@ import Dashboard from './Pages/Dashboard/Dashboard'
 import Activity from './Pages/Activity/Activity'
 import Login from './Pages/Login/Login'
 import Signup from './Pages/Login/Signup'
+import Add from './Pages/Add/Add'
 
 const App = (props) => {
   const [count, setCount] = useState(0)
@@ -18,7 +19,7 @@ const App = (props) => {
         <Routes>
           <Route index element={<Dashboard />} ></Route>
           <Route path="activity" element={<Activity />} ></Route>
-          {/* <Route path="" element={<Dashboard />} ></Route> */}
+          <Route path="add" element={<Add />} ></Route>
 
 
           {/* <Route path="/" element={<ListActivity />} ></Route>

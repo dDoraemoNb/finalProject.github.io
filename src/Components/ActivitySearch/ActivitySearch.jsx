@@ -45,9 +45,9 @@ const ActivitySearch =()=>{
                     <option value="2016">2016</option>
                 </select>
 
-                <button for="AddActivities" type="submit" className="AddActivities">
-                    + Add Activity
-                </button>
+                <a href="add" className="btnAddActivities">
+                   + Add Activity
+                </a> 
             </form>
         </div>
     );

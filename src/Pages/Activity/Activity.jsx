@@ -1,6 +1,7 @@
 import React from 'react'
 import ActivitySearch from '../../Components/ActivitySearch/ActivitySearch'
 import Navbar from '../../Components/Navbar/Navbar'
+import ActivitiesList from '../../Components/ActivitiesList/ActivitiesList'
 import './Activity.css'
 
 const Activity = (props) => {
@@ -13,6 +14,7 @@ const Activity = (props) => {
                     <Navbar />
                 </div>
                 <ActivitySearch />
+                <ActivitiesList />
             </div>
         </div>
     )
