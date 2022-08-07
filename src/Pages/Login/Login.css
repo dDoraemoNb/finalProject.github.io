@@ -1,0 +1,153 @@
+.bg-form{
+    display: flex;
+    padding: 14px 20px;
+    background-color: #fff;
+    align-items: center;
+    height: auto;
+    margin: 20px;
+    border-radius: 30px;
+   }
+  
+  .login-form{
+    margin: auto;
+    padding: 3rem ;
+    width:auto;
+    
+  }
+  .signup-form{
+    margin: auto;
+    padding: 3rem ;
+    width: 70%;
+  }
+  .signup-header{
+    color: rgba(248, 118, 61, 1);
+    font-size: 60px;
+  }
+  #input-signup{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .item {
+    width: 100%;
+    text-align: center;
+  }
+  #input{
+    border-radius: 10px;
+  }
+  #input-signup > div {
+     flex: 40%;
+              margin:2px 10px;
+  }
+
+  #shape-signup {
+    display: flex;
+  }
+  
+  #input-signup input[type=text],#input-signup input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #6f6d6d;
+    box-sizing: border-box;
+  }
+  #shape-signup input[type=number] {
+    width: 90%;
+    padding: 12px 20px;
+    margin-top : 8px;
+    margin-bottom : 8px;
+    display: inline-block;
+    border: 1px solid #6f6d6d;
+    box-sizing: border-box;
+  }
+  #shape-signup input{
+      width:100%;
+      height: 50px;
+      margin-top: 15px;
+      text-align: center;
+      border-radius: 10px;
+      border: 1px solid lightgrey;
+      color: #7D7769;
+      font-weight: bold;
+    }
+  #input-signup input{
+      width:100%;
+      height: 50px;
+      margin-top: 15px;
+      text-align: center;
+      border-radius: 10px;
+      border: 1px solid lightgrey;
+      color: #7D7769;
+      font-weight: bold;
+    }
+  #button-login{
+    display: flex;
+  }
+  #button-login a{
+    text-decoration: none;
+    color: rgba(248, 118, 61, 1);
+  }
+  
+  button.login {
+    background-color: rgba(248, 118, 61, 1);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+    margin-right: 50px;
+  }
+  
+  button.signup {
+    background-color: #fff;
+    color: rgba(248, 118, 61, 1);
+    border: 3px solid rgba(248, 118, 61, 1);
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px; 
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  
+  img.avatar {
+    width: 30%;
+    border-radius: 50%;
+  }
+  
+  .container-log-sign {
+     padding: 16px; 
+    margin: auto;
+  }
+  
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+  }

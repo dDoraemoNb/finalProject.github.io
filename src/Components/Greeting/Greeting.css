@@ -1,0 +1,40 @@
+.sayhi-user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 180px;
+    background: linear-gradient(217deg, rgba(254,85,39,1), rgba(202,1,53,1) 70.71%);
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10.9px);
+    -webkit-backdrop-filter: blur(10.9px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 20px 40px;
+    color: #fff;
+}
+
+.sayhi-title{
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 70px;
+    text-align: left;
+}
+
+.sayhi-user-text h3{
+    font-size: 29px;
+    line-height: 70px;
+
+}
+
+.sayhi-user-text p{
+    line-height: 25px;
+    font-weight: 400;
+}
+.reward-image{
+    width: 200px;
+    height: auto;
+}
+.name{
+    font-size: 40px;
+}
