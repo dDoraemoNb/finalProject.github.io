@@ -8,8 +8,7 @@
 .DailyRecommend p {
     text-align: left;
     margin-top: 0px;
-    color: #6F6F6F;
-    font-weight: bold;
+    font-weight: 700;
     font-size: larger;
 }
 

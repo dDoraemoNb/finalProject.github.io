@@ -28,14 +28,15 @@
     align-items: center;
 }
 
-h4.activities-list-title {
+.activities-list-title h4 {
     color: white;
     align-items: left;
 }
 
-p.activity-type {
+.activity-type p {
     color: white;
     align-items: right;
+    font-size: 1em;
 }
 
 .activities-description {
