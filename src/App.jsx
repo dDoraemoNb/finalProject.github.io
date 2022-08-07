@@ -11,7 +11,9 @@ import Add from './Pages/Add/Add'
 const App = (props) => {
   const [count, setCount] = useState(0)
   const [selectedActivity, setSelectActivity] = useState();
+
   const [profile,setProfile] = useState({name:'Aman',lastname:'Stickman',yrs:150,height:185,weight:65});
+
   const token = true
 
   if (token) {

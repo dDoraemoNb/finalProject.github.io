@@ -6,6 +6,8 @@ import { Link} from "react-router-dom"
 import './Dashboard.css'
 import ActivitiesList from '../../Components/ActivitiesList/ActivitiesList'
 
+
+
 const Dashboard = (props) => {
 
     return (
@@ -20,16 +22,17 @@ const Dashboard = (props) => {
                         <div className='col'>
                             <p>DashBoard</p>
                             <div className='top-left-content'>
-                                <Link to="/add"  className='frame'>+Add Activity</Link>
-                                {/* <a href="add" className='frame'>+Add Activity</a> */}
-                                {/* <Link to="/add" className='frame1'>+Add Challenge</Link> */}
+
+                                <Link to="/add" className='addActivities'>+Add Activity</Link>
+                                {/* <Link to="" className='addChallenge'>+Add Challenge</Link> */}
+
                             </div>
                         </div>
                         <ContentDashboard />
                         <ActivitiesList />
                     </div>
                     <div className="right-content">
-                        <Profile profile={props.profile}/>
+                        <Profile profile={props.profile} />
                     </div>
                 </div>
             </div>
