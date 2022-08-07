@@ -50,3 +50,4 @@ export const ActivitiesList = () => {
 }
 
 export default ActivitiesList;
+

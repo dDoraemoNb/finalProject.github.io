@@ -6,6 +6,7 @@ import './Dashboard.css'
 import ActivitiesList from '../../Components/ActivitiesList/ActivitiesList'
 import { Link } from 'react-router-dom'
 
+
 const Dashboard = (props) => {
 
     return (
@@ -28,7 +29,9 @@ const Dashboard = (props) => {
                         <ActivitiesList />
                     </div>
                     <div className="right-content">
+
                         <Profile profile={props.profile} />
+
                     </div>
                 </div>
             </div>
