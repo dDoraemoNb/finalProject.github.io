@@ -1,4 +1,6 @@
 import "./Navbar.css";
+
+import { Link} from "react-router-dom"
 // import logo from "../../../public/fit2B_logo_light.svg";
 // import homeIcon from "./MenuIcons/home.svg";
 // import challengeIcon from "./MenuIcons/challenge.svg";
@@ -12,11 +14,11 @@ const Navbar = () =>{
         <div className="header">
             <img src='../../../public/fit2B_logo_light.svg' className="logo" alt="logo" />
             <nav className="Navbar">
-                <a href="/"><img src='../../../public/MenuIcons/home.svg' className="navMenu" alt="homeIcon" /></a>
+                <Link to="/"><img src='../../../public/MenuIcons/home.svg' className="navMenu" alt="homeIcon" /></Link>
                 {/* <a href="#"><img src='../../../public/MenuIcons/challenge.svg' className="navMenu" alt="challengeIcon" /></a> */}
-                <a href="activity"><img src='../../../public/MenuIcons/activities.svg' className="navMenu" alt="activitiesIcon" /></a>
-                <a href="#"><img src='../../../public/MenuIcons/setting.svg' className="navMenu" alt="settingIcon" /></a>
-                <a href="#"><img src='../../../public/MenuIcons/logout.svg' className="navMenu" alt="logoutIcon" /></a>
+                <Link to="/activity"><img src='../../../public/MenuIcons/activities.svg' className="navMenu" alt="activitiesIcon" /></Link>
+                <Link to="#"><img src='../../../public/MenuIcons/setting.svg' className="navMenu" alt="settingIcon" /></Link>
+                <Link to="#"><img src='../../../public/MenuIcons/logout.svg' className="navMenu" alt="logoutIcon" /></Link>
             </nav>
       </div>
     );

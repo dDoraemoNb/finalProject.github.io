@@ -1,11 +1,22 @@
 .profile{
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5em;
+    align-items: center;
+}
+.profile h1{
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 30px;
 }
 .profile img {
     border-radius: 50%;
-    width: 25%;
+    width: 100%;
+    max-width: 150px;
 }
-.profile span{
+.profile p{
     margin: 0 1em;
-    font-size: 2em;
+    font-size: 1.5em;
+    line-height: 40px;
 }
