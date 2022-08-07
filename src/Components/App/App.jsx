@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './react.svg'
 import Greeting from '../Greeting/Greeting'
 import AddActivities from '../AddActivities/AddActivities'
+import Editprofile from '../Editprofile/Editprofile'
 import './App.css'
 
 
@@ -11,7 +12,8 @@ function App() {
   return (
     <div className="App">
       {/* <Greeting/> */}
-      <AddActivities />
+      {/* <AddActivities /> */}
+      <Editprofile/>
     </div>
   )
 }
