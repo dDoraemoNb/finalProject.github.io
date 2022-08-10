@@ -19,7 +19,7 @@
 
 .left-content p {
     font-size: 1.3em;
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
 }
 

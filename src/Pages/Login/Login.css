@@ -29,7 +29,7 @@
   }
   .item {
     width: 100%;
-    text-align: center;
+
   }
   #input{
     border-radius: 10px;
@@ -41,8 +41,10 @@
 
   #shape-signup {
     display: flex;
+    align-items: baseline;
+    text-align: center;
   }
-  
+
   #input-signup input[type=text],#input-signup input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -61,14 +63,17 @@
     box-sizing: border-box;
   }
   #shape-signup input{
-      width:100%;
-      height: 50px;
-      margin-top: 15px;
       text-align: center;
       border-radius: 10px;
-      border: 1px solid lightgrey;
+      width: 90%;
+      padding: 12px 20px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      display: inline-block;
+      border: 1px solid #6f6d6d;
       color: #7D7769;
-      font-weight: bold;
+      box-sizing: border-box;
+      
     }
   #input-signup input{
       width:100%;
@@ -86,6 +91,11 @@
   #button-login a{
     text-decoration: none;
     color: rgba(248, 118, 61, 1);
+    border: rgba(248, 118, 61, 1) 5px solid;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
   }
   
   button.login {
@@ -110,7 +120,7 @@
     width: 100%;
     border-radius: 10px; 
   }
-  
+
   button:hover {
     opacity: 0.8;
   }

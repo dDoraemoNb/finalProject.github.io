@@ -2,9 +2,10 @@ import React from 'react'
 import Profile from '../../Components/Profile/Profile'
 import ContentDashboard from '../../Components/ContentDashboard/ContentDashboard'
 import Navbar from '../../Components/Navbar/Navbar'
+import { Link} from "react-router-dom"
 import './Dashboard.css'
 import ActivitiesList from '../../Components/ActivitiesList/ActivitiesList'
-import { Link } from 'react-router-dom'
+
 
 
 const Dashboard = (props) => {
@@ -21,17 +22,17 @@ const Dashboard = (props) => {
                         <div className='col'>
                             <p>DashBoard</p>
                             <div className='top-left-content'>
+
                                 <Link to="/add" className='addActivities'>+Add Activity</Link>
                                 {/* <Link to="" className='addChallenge'>+Add Challenge</Link> */}
+
                             </div>
                         </div>
                         <ContentDashboard />
-                        <ActivitiesList />
+                        <ActivitiesList list={props.list}/>
                     </div>
                     <div className="right-content">
-
                         <Profile profile={props.profile} />
-
                     </div>
                 </div>
             </div>
