@@ -29,7 +29,7 @@ const Dashboard = (props) => {
                             </div>
                         </div>
                         <ContentDashboard />
-                        <ActivitiesList />
+                        <ActivitiesList list={props.list}/>
                     </div>
                     <div className="right-content">
                         <Profile profile={props.profile} />

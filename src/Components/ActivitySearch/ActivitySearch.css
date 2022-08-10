@@ -38,3 +38,12 @@ select{
     border: none;
     font-weight: 700;
 }
+.search_form{
+    display: flex;
+    white-space: pre;
+    align-items: baseline;
+}
+.search_form form{
+    display: flex;
+    align-items: center;
+}

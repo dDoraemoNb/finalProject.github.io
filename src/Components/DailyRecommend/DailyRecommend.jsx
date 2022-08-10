@@ -12,10 +12,10 @@ const DailyRecommend = () => {
         <p>Daily Recommend</p>
       </div>
       <div className="DailyRecommend-img">
-        <div><img src="../../../activities_images/001.svg" /></div>
-        <div><img src="../../../activities_images/002.svg" /></div>
-        <div><img src="../../../activities_images/003.svg" /></div>
-        <div><img src="../../../activities_images/004.svg" /></div>
+        <div><img src="public/activities_images/001.svg" /></div>
+        <div><img src="public/activities_images/002.svg" /></div>
+        <div><img src="public/activities_images/003.svg" /></div>
+        <div><img src="public/activities_images/004.svg" /></div>
       </div>
     </div>
   );

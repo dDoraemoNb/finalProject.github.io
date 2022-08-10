@@ -1,6 +1,4 @@
-.activities-description p{
-    margin: auto;
-}
+
 .title{
     display: flex;
     align-items: center;
@@ -40,15 +38,21 @@
 }
 
 .activities-description {
-    display: flex-start;
-    height: 50px;
-    background-color: white;
+    display: flex;
+    min-height: 50px;
+    background-color: rgb(205, 203, 203);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    align-items: center;
     text-indent: 20px;
     line-height: 2;
+    
 }
+.activities-list-description {
+    max-width: 100%;
+    word-wrap: break-word;
+    
+}
+
 .activities-list-form {
-    margin-bottom: 20px;;
+    margin-bottom: 20px;
 }

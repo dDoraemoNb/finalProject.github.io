@@ -2,10 +2,41 @@ import React from 'react';
 
 import './ActivitiesList.css';
 
-export const ActivitiesList = () => {
+export const ActivitiesList = (props) => {
+
     return (
         <div className="activities-list">
-            <div className="activities-list-form">
+            {
+                props.list.map(list => {
+                    return (
+                        <div className="activities-list-form">
+                            <div className="activities-title">
+                                <div className='title'>
+                                    <img src={`/public/activities_images/${list.img}.svg`} />
+                                    <div>
+                                        <h4 className="activities-list-title">
+                                            {list.title}
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p className="activity-type">Activity: {list.type}</p>
+                                </div>
+                            </div>
+                            <div className="activities-description">
+                                
+                                <p className='activities-list-description'> 17:70</p>
+                                <p className="activities-list-description">
+                                    {list.description}
+                                </p>
+
+                            </div>
+                        </div>
+                    )
+                })
+            }
+
+            {/* <div className="activities-list-form">
                 <div className="activities-title">
                     <div className='title'>
                         <img src='/public/activities_images/010.svg' />
@@ -44,7 +75,7 @@ export const ActivitiesList = () => {
                         วันนี้ฉันไปวิ่ง เจอน้องหมา
                     </p>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }

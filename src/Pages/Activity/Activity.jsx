@@ -14,7 +14,7 @@ const Activity = (props) => {
                     <Navbar />
                 </div>
                 <ActivitySearch />
-                <ActivitiesList />
+                <ActivitiesList list={props.list}/>
             </div>
         </div>
     )

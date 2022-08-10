@@ -1,6 +1,10 @@
 import "./Login.css";
 import React from "react";
+import { useState } from "react";
+
+import DatePicker from "react-datepicker";
 const Signup = (props) => {
+    const [startDate, setStartDate] = useState(new Date());
     return (
         <div className="main-login">
             <div className='bg-form'>
@@ -20,7 +24,8 @@ const Signup = (props) => {
                             <div id='shape-signup'>
                                 <div className='item'><input id='input' type="number" placeholder="Height" name="height" required /></div>
                                 <div className='item'> <input id='input' type="number" placeholder="Weight" name="weight" required /></div>
-                                <div className='item'> <input id='input' type="number" placeholder="Age" name="age" required /></div>
+                                {/* <div className='item'> <input id='input' type="number" placeholder="Date" name="date" required /></div> */}
+                                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
                             </div>
                             <div id='input-signup'>
                                 <div className='item'> <input id='input' type="password" placeholder="Password" name="pasw" required /></div>

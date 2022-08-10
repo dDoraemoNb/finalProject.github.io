@@ -1,14 +1,24 @@
-import React from "react";
+import React,{useState} from "react";
 import './AddActivities.css';
-
+import DatePicker from "react-datepicker";
 function AddActivities(props) {
+    const [startDate, setStartDate] = useState(new Date());
     return (
         <div className="AddActivities">
             <div className="AddActivitiesForm">
                 <form>
                     <input name="Title" type="text" placeholder="Title" />
-                    <input name="Activities" type="text" placeholder="Activities" />
-                    <input name="username" type="num" placeholder="00:00" />
+                    <select name="type_activity" id="dropdown">
+                        <option value=""> -----------</option>
+                        <option value="Running">Running</option>
+                        <option value="Jogging">Jogging</option>
+                        <option value="Hikking">Hikking</option>
+                        <option value="Swimming">Swimming</option>
+                        <option value="Walking">Walking</option>
+                        <option value="Yoga">Yoga</option>
+                    </select>
+                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} maxDate={new Date()}/>
+                    <input name="username" type="time" placeholder="00:00" />
 
                     <br />
                     <div className="description">
