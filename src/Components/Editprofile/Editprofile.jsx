@@ -18,33 +18,33 @@ const Editprofile = (props) => {
                             </div>
                             <div className="AddEditForm">
 
-                                <input name="First Name" type="text" placeholder="First Name" />
-                                
+                                <input name="First Name" type="text" defaultValue={"First Name"} />
+
                                 <br />
-                                <input name="Last Name" type="text" placeholder="Last Name" />
-                                
+                                <input name="Last Name" type="text" defaultValue={"Last Name"} />
+
                                 <br />
-                                <input name="Email" type="text" placeholder="Email" />
-                                
+                                <input name="Email" type="text" defaultValue={"Email"} />
+
                                 <br />
                                 <div id="shape">
-                                    <div class='item1'><input id='input1' type="number" placeholder="Age" name="uname" required/></div>
-                                    <div class='item1'><input id='input1' type="number" placeholder="weight" name="uname" required/></div>
-                                    <div class='item1'><input id='input1' type="number" placeholder="Height" name="uname" required/></div>
+                                    <div class='item1'><input id='input1' type="number" placeholder="Age" name="uname" required /></div>
+                                    <div class='item1'><input id='input1' type="number" placeholder="weight" name="uname" required /></div>
+                                    <div class='item1'><input id='input1' type="number" placeholder="Height" name="uname" required /></div>
                                     <br />
 
                                 </div>
-                               
+
                                 <br />
                                 <div>
-                                    <input name="New Password" type="number" placeholder="New Password" />
-                                    
+                                    <input name="New Password" type="password" placeholder="New Password" />
+
                                     <br />
-                                    <input name="Confirm New Password" type="number" placeholder="Confirm New Password" />
+                                    <input name="Confirm New Password" type="password" placeholder="Confirm New Password" />
                                 </div>
-                                
+
                                 <br />
-                                <div รก="button">
+                                <div id ="button">
                                     <a href='/' ><button className='login1' type="submit" >Save</button></a>
                                     <a href='/' ><button className='signup1' type="submit" >Submit</button></a>
                                 </div>
