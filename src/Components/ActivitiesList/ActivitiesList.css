@@ -1,24 +1,11 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: center;
-    
-}
-
-.activities-list {
-    margin: 50;
-    align-items: center;
-}
-
-img {
-    height: 35px;
-    align-items: left;
-}
-
-.activities-title {
+.title{
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
     background-color: #F8763D;
     height: 30px;
     border-top-left-radius: 10px;
@@ -26,25 +13,112 @@ img {
     align-items: center;
 }
 
-h4.activities-list-title {
+.activities-list {
+    margin: 50;
+    align-items: center;
+}
+
+.title img {
+    height: 35px;
+    align-items: left;
+}
+
+.activities-title {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #F8763D;
+    height: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    align-items: center;
+}
+
+.activities-list-title h4 {
     color: white;
     align-items: left;
 }
 
-p.activity-type {
+.activity-type p {
     color: white;
     align-items: right;
+    font-size: 1em;
 }
 
 .activities-description {
-    display: flex-start;
-    height: 50px;
+    display: block;
+    min-height: 50px;
+    max-width: 100%;
     background-color: white;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    align-items: center;
     text-indent: 20px;
     line-height: 2;
 }
 
+.activities-description p {
+    margin: 0;
+    padding: 15px 20px 0px 20px;
+}
 
+.activities-list-form {
+    margin-bottom: 20px;
+}
+
+.activities-description .bx {
+    font-size: 2rem;
+ 
+    padding-right: 10px;
+    color: black;
+}
+
+/* Footer*/
+.activities-footer {
+    color: black;
+    margin: 0 auto;
+    padding-bottom: .125rem;
+    width: 100%;
+}
+
+.activities-footer ul {
+    list-style: none;
+    display: flex;
+    flex: row wrap;
+    justify-content: flex-end;
+    padding-left: 0;
+}
+
+.activities-footer li:first-child {
+    margin-right: auto;
+}
+
+.activities-footer li+li {
+    margin-left: .5rem;
+}
+
+.activities-footer li {
+    color: black;
+    font-size: 1.2rem;
+    height: 1.5rem;
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    white-space: nowrap;
+
+    /* & a {
+        color: lighten(#333, 40%);
+    } */
+}
+
+.description-btn {
+    margin-right: 1rem;
+    color: black;
+}
+
+.activities-list-description {
+
+    border-radius: 3px;
+    padding: 0 .5rem;
+}
