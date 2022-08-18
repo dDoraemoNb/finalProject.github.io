@@ -34,7 +34,7 @@ const App = (props) => {
           <Route path="activity" element={<Activity list={activitys}/>} ></Route>
           <Route path="add" element={<Add />} ></Route>
           <Route path='edit-profile' element={<Edit profile1={profile} />}></Route>
-
+          
           {/* <Route path="/" element={<ListActivity />} ></Route>
           <Route path="/" element={<AddActivity />} ></Route> */}
         </Routes>

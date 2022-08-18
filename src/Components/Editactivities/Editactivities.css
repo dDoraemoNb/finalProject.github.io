@@ -59,5 +59,9 @@
     align-items: center;
     column-gap: 12rem;
 }
-
+.button{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
 

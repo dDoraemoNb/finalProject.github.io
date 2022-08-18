@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './AddActivities.css';
 import DatePicker from "react-datepicker";
-function AddActivities(props) {
+function Editactivities(props) {
     const [startDate, setStartDate] = useState(new Date());
     return (
         <div className="AddActivities">
@@ -36,10 +36,11 @@ function AddActivities(props) {
 
             <br />
             <div className="button">
-                <button className="buttonPost">POST</button>
+                <button className="buttonPost">SAVE</button>
+                <button className="buttonPost">SUBMIT</button>
             </div>
         </div >
     )
 }
 
-export default AddActivities;
+export default Editactivities;
