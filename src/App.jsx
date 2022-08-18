@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 import reactLogo from './react.svg'
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -24,6 +25,14 @@ const App = (props) => {
     ]
   );
 
+  const getProfile = async (user = '62f32c1d78af39f80fa8aadd') => {
+    const response = await axios.get('http://localhost:8080/users/user', {params: { u_id: user }});
+    console.log(response.data)
+    setProfile(response.data)
+}
+useEffect(() => {
+  getProfile();
+},[]);
   const token = true
 
   if (token) {
