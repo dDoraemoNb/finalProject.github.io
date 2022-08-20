@@ -3,7 +3,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import React from "react";
 import "./Editactivities.css"
 
-const Edit = (props) => {
+const Editactivity = (props) => {
     return (
         <div className='main-web'>
             <div className="form">
@@ -11,10 +11,10 @@ const Edit = (props) => {
                     <Navbar />
                 </div>
 
-                <Editprofile profile2={props.profile1}/>
+                <Editactivities />
             </div>
         </div>
     )
 }
 
-export default EditActivity;
+export default Editactivity;
