@@ -24,11 +24,18 @@ export const ActivitiesList = (props) => {
                                 </div>
                             </div>
                             <div className="activities-description">
-                                
-                                <p className='activities-list-description'> 17:70</p>
-                                <p className="activities-list-description"></p>
-                                {list.description}                         
 
+
+                                <p className="activities-list-description">
+                                    {list.description}
+                                </p>
+                                <div class="activities-footer">
+                                    <ul>
+                                        <li class='activities-list-description'>17:70</li>
+                                        <li class='description-btn'><a href="#"><i class='bx bx-edit'></i></a></li>
+                                        <li class='description-btn'><a href="#"><i class='bx bxs-trash' ></i></a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     )
