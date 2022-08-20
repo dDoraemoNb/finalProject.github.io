@@ -45,12 +45,20 @@ const App = (props) => {
     // console.log(response.data)
     setProfile(response.data)
   }
+
+  const getactivities = async (user = '62f32c1d78af39f80fa8aadd') => {
+    const response = await axios.get('http://localhost:8080/activities', { params: { u_id: user } })
+
+    setActivitys(response.data)
+  }
+
   useEffect(() => {
     getProfile();
+    getactivities();
   }, []);
   //const token = true
 
- 
+
   return (
     <BrowserRouter>
       <Routes>
