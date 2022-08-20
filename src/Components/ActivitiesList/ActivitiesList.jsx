@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { useState } from 'react';
+import { Link} from "react-router-dom"
 import './ActivitiesList.css';
 
 export const ActivitiesList = (props) => {
@@ -8,11 +9,12 @@ export const ActivitiesList = (props) => {
         <div className="activities-list">
             {
                 props.list.map(list => {
+                   
                     return (
                         <div className="activities-list-form">
                             <div className="activities-title">
                                 <div className='title'>
-                                    <img src={`/public/activities_images/${list.img}.svg`} />
+                                    <img src={`activities_images/${list.img}.svg`} />
                                     <div>
                                         <h4 className="activities-list-title">
                                             {list.title}
@@ -32,7 +34,7 @@ export const ActivitiesList = (props) => {
                                 <div class="activities-footer">
                                     <ul>
                                         <li class='activities-list-description'>17:70</li>
-                                        <li class='description-btn'><a href="#"><i class='bx bx-edit'></i></a></li>
+                                        <Link to='/edit-activities' list={list.description} ><li class='description-btn'><a href="#"><i class='bx bx-edit'></i></a></li></Link>
                                         <li class='description-btn'><a href="#"><i class='bx bxs-trash' ></i></a></li>
                                     </ul>
                                 </div>

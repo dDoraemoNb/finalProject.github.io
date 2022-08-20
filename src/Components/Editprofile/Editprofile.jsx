@@ -17,7 +17,8 @@ const Editprofile = (props) => {
 
                             </div>
                             <div className="AddEditForm">
-
+                                <span className="photo" title="Upload your Avatar!"></span>
+                                <input type="file" className="btn" />
                                 <input name="First Name" type="text" defaultValue={props.profile2.name} />
 
                                 <br />
