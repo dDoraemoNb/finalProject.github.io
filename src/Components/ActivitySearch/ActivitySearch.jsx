@@ -14,7 +14,43 @@ const ActivitySearch = () => {
             </h2>
             <div className="search_form">
                 <form action="./action_page.php">
-                    {/* <label for="Week">Weekly</label>
+                    <label for="date">Date</label>
+                    <DatePicker
+                        selectsRange={true}
+                        startDate={startDate}
+                        endDate={endDate}
+                        maxDate={new Date()}
+                        onChange={(update) => {
+                            setDateRange(update);
+                        }}
+                        isClearable={true}
+                    />
+
+                    <label for="type_activity">Type</label>
+                    <select name="type_activity" id="dropdown">
+                        <option value=""> -----------</option>
+                        <option value="Running">Running</option>
+                        <option value="Jogging">Jogging</option>
+                        <option value="Hikking">Hikking</option>
+                        <option value="Swimming">Swimming</option>
+                        <option value="Walking">Walking</option>
+                        <option value="Yoga">Yoga</option>
+
+                    </select>
+
+
+
+                </form>
+                <Link to="/add" className='btnAddActivities'>+Add Activity</Link>
+                
+            </div>
+        </div>
+    );
+};
+
+export default ActivitySearch
+
+{/* <label for="Week">Weekly</label>
                 <select name="week" id="dropdown">
                     <option value="sunday">Sunday</option>
                     <option value="monday">Monday</option>
@@ -51,38 +87,3 @@ const ActivitySearch = () => {
                     <option value="2017">2017</option>
                     <option value="2016">2016</option>
                 </select> */}
-                    <label for="date">Date</label>
-                    <DatePicker
-                        selectsRange={true}
-                        startDate={startDate}
-                        endDate={endDate}
-                        maxDate={new Date()}
-                        onChange={(update) => {
-                            setDateRange(update);
-                        }}
-                        isClearable={true}
-                    />
-
-                    <label for="type_activity">Type</label>
-                    <select name="type_activity" id="dropdown">
-                        <option value=""> -----------</option>
-                        <option value="Running">Running</option>
-                        <option value="Jogging">Jogging</option>
-                        <option value="Hikking">Hikking</option>
-                        <option value="Swimming">Swimming</option>
-                        <option value="Walking">Walking</option>
-                        <option value="Yoga">Yoga</option>
-
-                    </select>
-
-
-
-                </form>
-                <Link to="/add" className='btnAddActivities'>+Add Activity</Link>
-                
-            </div>
-        </div>
-    );
-};
-
-export default ActivitySearch

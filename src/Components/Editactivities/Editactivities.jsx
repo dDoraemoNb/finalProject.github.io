@@ -38,7 +38,7 @@ function Editactivities(props) {
             </div >
                 <br />
                 <div className="button">
-                    <button className="buttonSave">Save</button>
+                    <button className="buttonSave" >Save</button>
                     <button className="buttonCancel">Cancel</button>
                 </div>
         </div >

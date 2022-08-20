@@ -1,25 +1,32 @@
 import { React, useState, useEffect } from 'react'
-import { Navigate } from 'react-router-dom';
 import './Login.css'
 import { Link } from 'react-router-dom';
 
 
 const Login = (props) => {
+    const [username, setUserName] = useState();
+    const [password, setPassword] = useState();
 
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log('WORK')
+    }
     return (
         <div className='main-login'>
             <div className='bg-form'>
                 <div className='login-form'>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="imgcontainer">
                             <img src="../../../public/img_avatar2 .png" alt="Avatar" className="avatar" />
                         </div>
 
                         <div className="container">
                             <div id='input-signup'>
-                                <input type="text" placeholder="Enter Username" name="uname" required />
+                                <input type="text" placeholder="Enter Username" name="uname"
+                                    onChange={e => username = e.firstnamme.value} required />
 
-                                <input type="password" placeholder="Enter Password" name="psw" required />
+                                <input type="password" placeholder="Enter Password" name="psw"
+                                    onChange={e => firstnamme = e.firstnamme.value} required />
                             </div>
                             <div className="checkbox">
                                 <input type="checkbox" /*checked="checked"*/ name="remember" />

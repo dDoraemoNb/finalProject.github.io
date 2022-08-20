@@ -12,6 +12,7 @@ function AddActivities(props) {
                         <div className="info" >
                             <input className="Title" name="Title" type="text" placeholder="Title" />
                             <div className="selectActivity">
+                                <label for="type_activity">Type</label>
                                 <select name="type_activity" id="dropdown">
                                     <option value=""> -----------</option>
                                     <option value="Running">Running</option>
@@ -22,11 +23,11 @@ function AddActivities(props) {
                                     <option value="Yoga">Yoga</option>
                                 </select>
                                 <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} maxDate={new Date()} />
-                                <input name="username" type="time" placeholder="00:00" />
+                                <input name="time" type="time" placeholder="00:00" />
                             </div>
                         </div>
                         <br />
-                        
+
                         <div className="description">
                             <textarea placeholder="Description..." name="description" id="" cols="180" rows="20"></textarea>
                             {/* <input name="Description" type="text" placeholder="Description..." /> */}
