@@ -52,13 +52,13 @@
     background-color: white;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    text-indent: 20px;
     line-height: 2;
 }
 
 .activities-description p {
     margin: 0;
     padding: 15px 20px 0px 20px;
+    text-indent: 20px;
 }
 
 .activities-list-form {
@@ -106,10 +106,6 @@
     text-transform: uppercase;
     position: relative;
     white-space: nowrap;
-
-    /* & a {
-        color: lighten(#333, 40%);
-    } */
 }
 
 .description-btn {
