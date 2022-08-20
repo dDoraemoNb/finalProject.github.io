@@ -8,56 +8,43 @@
     justify-content: space-between; 
 }
 
-.AddActivitiesForm form{
-    
-    display:flex;
+.AddEdit{
+    width: 100%;
+}
+
+.info{
+    display: flex;
     justify-content: space-between;
-    align-items: center;   
-    flex-direction: column;
+    align-items: center;
 }
 
-.AddActivitiesForm input {
-    background-color: white;
-    margin: 0 30px;
-
+.selectActivity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.AddActivitiesForm ::placeholder {
-    color: #6F6F6F;
-    font-weight: bold;
-
+input {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #a7a7a7;
 }
 
-.description {
-    color: #D9D9D9;
-    margin-top: 10px;
-    
-    
-}
-.button{
-    justify-content: flex-end;
+.Title{
+    width: 40%;
 }
 
-.buttonPost {
+textarea{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.buttonPost{
     background-color: #F8763D;
     color: white;
     scroll-margin-block: 0;
-    width: 100px;
-    height: 40px;
-   
+    padding: 15px 50px;
+    border-radius: 10px;
+    margin-top: 2rem;
+    border: none;
 }
-
-.AddActivities{
-    align-items: space-between;
-    display: flex;
-    /* justify-content: flex-end; */
-}  
-
-.info{
-    display: flex; 
-    justify-content:center;
-    align-items: center;
-    column-gap: 12rem;
-}
-
-

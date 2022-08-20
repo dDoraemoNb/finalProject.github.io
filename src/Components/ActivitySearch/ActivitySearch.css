@@ -47,3 +47,31 @@ select{
     display: flex;
     align-items: center;
 }
+
+.photo-preview{
+    width: 100% !important;
+    max-width: 125px !important;
+    height: 100% !important;
+    max-height: 125px!important;
+    border-radius: 50% !important;
+  }
+
+  .middle-profilepic {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+  }
+  
+  .container-profilepic:hover .photo-preview {
+    opacity: 0.3;
+  }
+  
+  .container-profilepic:hover .middle-profilepic {
+    opacity: 1;
+  }
+  
+  .text-profilepic {
+    color: green;
+    font-size: 16px;
+  }
