@@ -26,9 +26,8 @@ export const ActivitiesList = (props) => {
                             <div className="activities-description">
                                 
                                 <p className='activities-list-description'> 17:70</p>
-                                <p className="activities-list-description">
-                                    {list.description}
-                                </p>
+                                <p className="activities-list-description"></p>
+                                {list.description}                         
 
                             </div>
                         </div>
