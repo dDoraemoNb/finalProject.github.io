@@ -8,9 +8,7 @@ const Editprofile = (props) => {
                 <div className="wrap">
                     <fieldset>
                         <form>
-                            <div className="Title">
-                                <h1><strong>Profile Image Upload</strong></h1>
-                            </div>
+
                             <div className="img">
                                 {/* <input type="file" /> */}
                                 <img src="public/profile.png" width={150} />
@@ -29,9 +27,9 @@ const Editprofile = (props) => {
 
                                 <br />
                                 <div id="shape">
-                                    <div class='item1'><input id='input1' type="number" defaultValue={props.profile2.yrs} name="yrs" required />Yrs</div>
-                                    <div class='item1'><input id='input1' type="number" defaultValue={props.profile2.weight} name="weight" required />Kg</div>
-                                    <div class='item1'><input id='input1' type="number" defaultValue={props.profile2.height} name="height" required />Cm</div>
+                                    <div className='item1'><input id='input1' type="number" defaultValue={props.profile2.yrs} name="yrs" required />Yrs</div>
+                                    <div className='item1'><input id='input1' type="number" defaultValue={props.profile2.weight} name="weight" required />Kg</div>
+                                    <div className='item1'><input id='input1' type="number" defaultValue={props.profile2.height} name="height" required />Cm</div>
                                     <br />
 
                                 </div>

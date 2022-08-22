@@ -4,7 +4,6 @@
   height: auto;
   margin: 20px;
   border-radius: 30px;
-
 }
 
 /* .edit-form {
@@ -26,14 +25,10 @@
 
 }
 
+
 form input{
   width: 100%;
 }
-.Title {
-  text-align: center;
-}
-
-
 
 #button {
   align-items: center;
@@ -55,42 +50,43 @@ fieldset {
   border-radius: 10px;
   border-right: 1px solid transparent;
   border-left: 1px solid transparent;
+  margin: 0 auto;
 
 }
 
 #button {
+  margin-top: 20px;
   display: flex;
+  justify-content: center;
+  gap: 50px;
 }
 
 
 button.login1 {
   background-color: rgba(248, 118, 61, 1);
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  padding: 10px 20px;
   border: none;
   cursor: pointer;
   max-width: 100%;
-  border-radius: 10px;
-  margin-right: 50px;
+  border-radius: 5px;
 }
 
 button.signup1 {
   background-color: #fff;
   color: rgba(248, 118, 61, 1);
-  border: 3px solid rgba(248, 118, 61, 1);
-  padding: 14px 20px;
-  margin: 8px 0;
+  border: 1px solid rgba(248, 118, 61, 1);
+  padding: 10px 20px;
   cursor: pointer;
   max-width: 100%;
-  border-radius: 10px;
+  border-radius: 5px;
 
 }
 
 #shape {
   display: flex;
   justify-content: center;
-  column-gap: 3rem;
+  gap: 1.5rem;
   width: 100%;
 }
 
