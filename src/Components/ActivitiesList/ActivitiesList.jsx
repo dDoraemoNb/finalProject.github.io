@@ -1,15 +1,45 @@
-import React from 'react';
-import { useState } from 'react';
-import { Link} from "react-router-dom"
+import axios from 'axios';
+import React,{ useEffect ,useState} from 'react';
+import { Link } from "react-router-dom"
 import './ActivitiesList.css';
+import useToken from '../../useToken';
 
+
+// props pageninate = false
 export const ActivitiesList = (props) => {
+    const { token, setToken } = useToken();
+    const [activitys, setActivitys] = useState(
+        [
+          {
+            img: '010', title: 'ไปวิ่งกับน้องหมา', type: 'Jogging',
+            description: 'It is a long established fact that a reader will be distracted bythe readable content of a page when looking at its layout. '
+          },
+          {
+            img: '002', title: 'ไปปาก', type: 'swim',
+            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+          },
+        ]
+      );
+      const getactivities = async (user = token) => {
+          const response = await axios.get('http://localhost:8080/activities', { params: { user_id: user } })
+      
+          setActivitys(response.data)
+        }
+      
+
+
+
+    useEffect(() => {
+        getactivities()
+        //request with limit
+        //response limit
+    })
 
     return (
         <div className="activities-list">
             {
-                props.list.map(list => {
-                   
+                activitys.map(list => {
+
                     return (
                         <div className="activities-list-form">
                             <div className="activities-title">
@@ -34,7 +64,7 @@ export const ActivitiesList = (props) => {
                                 <div class="activities-footer">
                                     <ul>
                                         <li class='activities-list-description'>17:70</li>
-                                        <Link to='/edit-activities' list={list.description} ><li class='description-btn'><a href="#"><i class='bx bx-edit'></i></a></li></Link>
+                                        <li class='description-btn'><Link to='/edit-activities/62f368fd3c6d66cccd2afae9' ><i class='bx bx-edit'></i></Link></li>
                                         <li class='description-btn'><a href="#"><i class='bx bxs-trash' ></i></a></li>
                                     </ul>
                                 </div>

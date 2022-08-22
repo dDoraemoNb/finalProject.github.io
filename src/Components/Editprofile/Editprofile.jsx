@@ -2,6 +2,7 @@ import React from "react";
 import './Editprofile.css';
 
 const Editprofile = (props) => {
+    
     return (
         <div className="main-editprofile">
             <div className="bg">
@@ -18,20 +19,20 @@ const Editprofile = (props) => {
                             </div>
                             <div className="AddEditForm">
                                 <span className="photo" title="Upload your Avatar!"></span>
-                                <input type="file" className="btn" />
-                                <input name="First Name" type="text" defaultValue={props.profile2.name} />
+                                <input type="file" className="btn" accept="image/png, image/gif, image/jpeg"/>
+                                <input name="First Name" type="text" defaultValue={props.profile.firstName} />
 
                                 <br />
-                                <input name="Last Name" type="text" defaultValue={props.profile2.lastname} />
+                                <input name="Last Name" type="text" defaultValue={props.profile.lastName} />
 
                                 {/* <br />
                                 <input name="Email" type="text" defaultValue={props.profile2.email} /> */}
 
                                 <br />
                                 <div id="shape">
-                                    <div class='item1'><input id='input1' type="number" defaultValue={props.profile2.yrs} name="yrs" required />Yrs</div>
-                                    <div class='item1'><input id='input1' type="number" defaultValue={props.profile2.weight} name="weight" required />Kg</div>
-                                    <div class='item1'><input id='input1' type="number" defaultValue={props.profile2.height} name="height" required />Cm</div>
+                                    <div class='item1'><input id='input1' type="number" defaultValue={props.profile.birthday} name="yrs" required />Yrs</div>
+                                    <div class='item1'><input id='input1' type="number" defaultValue={props.profile.weight} name="weight" required />Kg</div>
+                                    <div class='item1'><input id='input1' type="number" defaultValue={props.profile.height} name="height" required />Cm</div>
                                     <br />
 
                                 </div>

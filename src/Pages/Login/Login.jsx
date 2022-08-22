@@ -1,15 +1,74 @@
 import { React, useState, useEffect } from 'react'
 import './Login.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import Swal from "sweetalert2";
+import PropTypes from 'prop-types';
+import useToken from '../../useToken';
 
+// async function loginUser(credentials) {
+//     return fetch('http://localhost:8080/login', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify(credentials)
+//     })
+//       .then(data => data.json())
+//    }
 
-const Login = (props) => {
-    const [username, setUserName] = useState();
+const Login = () => {
+    const navigate = useNavigate();
+    const [userName, setUserName] = useState();
     const [password, setPassword] = useState();
+
+    const usedToken = useToken()
+    
+    // const handleSubmit = async e => {
+    //     e.preventDefault();
+    //     const token = await loginUser({
+    //         userName,
+    //       password
+    //     });
+    //     setToken(token);
+    //   }
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log('WORK')
+        // console.log('WORK')
+
+        const data = {
+            user_name: userName,
+            password: password
+        }
+
+        const checkLogin = async (user_name = data.user_name) => {
+            const response = await axios.get('http://localhost:8080/users/signup/check', { params: { user_name: user_name } });
+            if (!response.data) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Invalid username ',
+                })
+            } else if (data.password !== response.data.password) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Invalid  password',
+                })
+            } else {
+                axios.post('http://localhost:8080/login', data)
+                    .then(res => {
+                        // console.log(res)
+                        usedToken.setToken(res.data)
+                        navigate('/')
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+            }
+        }
+        checkLogin()
     }
     return (
         <div className='main-login'>
@@ -23,15 +82,15 @@ const Login = (props) => {
                         <div className="container">
                             <div id='input-signup'>
                                 <input type="text" placeholder="Enter Username" name="uname"
-                                    onChange={e => username = e.firstnamme.value} required />
+                                    onChange={e => setUserName(e.target.value)} required />
 
                                 <input type="password" placeholder="Enter Password" name="psw"
-                                    onChange={e => firstnamme = e.firstnamme.value} required />
+                                    onChange={e => setPassword(e.target.value)} required />
                             </div>
-                            <div className="checkbox">
-                                <input type="checkbox" /*checked="checked"*/ name="remember" />
+                            {/* <div className="checkbox">
+                                <input type="checkbox" checked="checked" name="remember" />
                                 <label>Remember me</label>
-                            </div>
+                            </div> */}
                         </div>
                         <a href='/' ><button className='login' type="submit" >Log In</button></a>
                         {/* <div className="container" style="background-color:#f1f1f1">

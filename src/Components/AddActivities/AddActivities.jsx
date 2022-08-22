@@ -1,16 +1,41 @@
 import React, { useState } from "react";
 import './AddActivities.css';
 import DatePicker from "react-datepicker";
+import axios from "axios";
 function AddActivities(props) {
     const [startDate, setStartDate] = useState(new Date());
+    const [title, setTitle] = useState()
+
+    function handleSubmit(e) {
+        e.preventDefault();
+
+        const data = {
+            title: title,
+            date: startDate,
+
+
+        }
+
+        console.log(data)
+        axios.post('http://localhost:8080/activities/create', data).then(
+            res => {
+                console.log(res)
+            }
+        ).catch(
+            (error) => {
+                if (error.response) console.log(error.response.data);
+            }
+        )
+    }
     return (
         <div className="AddActivities">
             <div className="AddActivitiesForm">
 
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="AddEdit" >
                         <div className="info" >
-                            <input className="Title" name="Title" type="text" placeholder="Title" />
+                            <input className="Title" name="Title" type="text"
+                                onChange={e => setTitle(e.target.value)} placeholder="Title" />
                             <div className="selectActivity">
                                 <label for="type_activity">Type</label>
                                 <select name="type_activity" id="dropdown">
@@ -34,14 +59,15 @@ function AddActivities(props) {
                         </div>
 
                     </div>
+                    <div className="button">
+                        <button className="buttonPost" type="submit">POST</button>
+                    </div>
                 </form>
 
             </div >
 
             <br />
-            <div className="button">
-                <button className="buttonPost">POST</button>
-            </div>
+
         </div >
     )
 }

@@ -1,13 +1,16 @@
 import React, { useState } from "react";
+import {useParams} from 'react-router' 
 import './Editactivities.css';
 import DatePicker from "react-datepicker";
 function Editactivities(props) {
     const [startDate, setStartDate] = useState(new Date());
     // console.log(props.list.activityID)
+    let { activity_id } = useParams();
+    console.log(activity_id)
     return (
         <div className="AddActivities">
             <div className="AddActivitiesForm">
-                
+
                 <form>
                     <div className="AddEdit" >
                         <div className="info" >
