@@ -18,8 +18,6 @@
 
 .AddActivitiesForm input {
     background-color: white;
-    margin: 0 30px;
-
 }
 
 .AddActivitiesForm ::placeholder {
@@ -55,9 +53,9 @@
 
 .info{
     display: flex; 
-    justify-content:center;
+    justify-content:space-between;
     align-items: center;
-    column-gap: 12rem;
+
 }
 .button{
     display: flex;
