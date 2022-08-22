@@ -1,12 +1,37 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import {useParams} from 'react-router' 
 import './Editactivities.css';
 import DatePicker from "react-datepicker";
+import axios from "axios";
+
+
 function Editactivities(props) {
     const [startDate, setStartDate] = useState(new Date());
+    const [activity,setActivitys] = useState({});
+    const [selectedType,setType] =useState()
     // console.log(props.list.activityID)
     let { activity_id } = useParams();
-    console.log(activity_id)
+
+    // let date = new Date(activity.date)
+
+        const getActivityID = async (activity = activity_id) =>{
+            const response =   await axios.get(`http://localhost:8080/activities/${activity}`);
+            setActivitys(response.data)
+            if(response.data.date){
+                const date = new Date(response.data.date)
+            setStartDate(date)
+            }
+
+           
+                setType(response.data.type)
+            
+            // console.log(response.data)
+        }
+
+    useEffect(()=>{
+        getActivityID();
+    },[])
+
     return (
         <div className="AddActivities">
             <div className="AddActivitiesForm">
@@ -14,9 +39,9 @@ function Editactivities(props) {
                 <form>
                     <div className="AddEdit" >
                         <div className="info" >
-                            <input className="Title" name="Title" type="text" placeholder="Title" />
-                            <div className="selectActivity">
-                                <select name="type_activity" id="dropdown">
+                            <input className="Title" name="Title" type="text" defaultValue={activity.title} placeholder="Title" />
+                            <div className="selectActivity"> 
+                                <select value={selectedType} onChange={e=>setType(e.target.value)} >
                                     <option value=""> -----------</option>
                                     <option value="Running">Running</option>
                                     <option value="Jogging">Jogging</option>
@@ -26,13 +51,13 @@ function Editactivities(props) {
                                     <option value="Yoga">Yoga</option>
                                 </select>
                                 <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} maxDate={new Date()} />
-                                <input name="username" type="time" placeholder="00:00" />
+                                <input name="username" type="time" placeholder="00:00" defaultValue={activity.time}/>
                             </div>
                         </div>
                         <br />
 
                         <div className="description">
-                            <textarea placeholder="Description..." name="description" id="" cols="180" rows="20"></textarea>
+                            <textarea defaultValue={activity.description} placeholder="Description..."  name="description" id="" cols="180" rows="20"></textarea>
                             {/* <input name="Description" type="text" placeholder="Description..." /> */}
                         </div>
 

@@ -33,7 +33,7 @@ export const ActivitiesList = (props) => {
         getactivities()
         //request with limit
         //response limit
-    })
+    },[])
 
     return (
         <div className="activities-list">
@@ -64,7 +64,7 @@ export const ActivitiesList = (props) => {
                                 <div class="activities-footer">
                                     <ul>
                                         <li class='activities-list-description'>17:70</li>
-                                        <li class='description-btn'><Link to='/edit-activities/62f368fd3c6d66cccd2afae9' ><i class='bx bx-edit'></i></Link></li>
+                                        <li class='description-btn'><Link to={`/edit-activities/${list._id}`} ><i class='bx bx-edit'></i></Link></li>
                                         <li class='description-btn'><a href="#"><i class='bx bxs-trash' ></i></a></li>
                                     </ul>
                                 </div>

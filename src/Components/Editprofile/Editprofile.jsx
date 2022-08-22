@@ -30,19 +30,19 @@ const Editprofile = (props) => {
 
                                 <br />
                                 <div id="shape">
-                                    <div class='item1'><input id='input1' type="number" defaultValue={props.profile.birthday} name="yrs" required />Yrs</div>
-                                    <div class='item1'><input id='input1' type="number" defaultValue={props.profile.weight} name="weight" required />Kg</div>
-                                    <div class='item1'><input id='input1' type="number" defaultValue={props.profile.height} name="height" required />Cm</div>
+                                    <div className='item1'><input id='input1' type="number" defaultValue={props.profile.birthday} name="yrs" required />Yrs</div>
+                                    <div className='item1'><input id='input1' type="number" defaultValue={props.profile.weight} name="weight" required />Kg</div>
+                                    <div className='item1'><input id='input1' type="number" defaultValue={props.profile.height} name="height" required />Cm</div>
                                     <br />
 
                                 </div>
 
                                 <br />
                                 <div>
-                                    <input name="New Password" type="password" placeholder="New Password" />
+                                    <input name="new_password" type="password" placeholder="New Password" />
 
                                     <br />
-                                    <input name="Confirm New Password" type="password" placeholder="Confirm New Password" />
+                                    <input name="Confirm_password" type="password" placeholder="Confirm New Password" />
 
                                 </div>
 

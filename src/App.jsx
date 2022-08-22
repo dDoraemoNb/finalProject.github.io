@@ -33,6 +33,7 @@ const App = (props) => {
   function getdetail(detail) {
     setProfile(detail)
   }
+  
   // const [activitys, setActivitys] = useState(
   //   [
   //     {
@@ -47,7 +48,7 @@ const App = (props) => {
   // );
 
 
-  console.log(profile)
+  // console.log(profile)
   // const [selectedActivity, setSelectActivity] = useState();
 
   // const getProfile = async (user = token) => {
