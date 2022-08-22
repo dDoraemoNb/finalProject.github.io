@@ -4,9 +4,6 @@ import DatePicker from "react-datepicker";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'
 
-// import axios from "axios";
-// import { parsePath } from "react-router";
-// import e from "express";
 
 function AddActivities(props) {
   const [startDate, setStartDate] = useState(new Date());
@@ -34,6 +31,7 @@ function AddActivities(props) {
 
     }else if (addType==='Yoga') {   
         image = '012'
+
 
     }else if (addType==='Jump Rope') {   
         image = '006'
@@ -98,7 +96,6 @@ function AddActivities(props) {
               </div>
             </div>
             <br />
-
             <div className="description">
               <textarea
                 placeholder="Description..."
@@ -121,6 +118,7 @@ function AddActivities(props) {
       </div>
     </div>
   );
+
 }
 
 export default AddActivities;

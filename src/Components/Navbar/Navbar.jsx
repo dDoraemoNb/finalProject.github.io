@@ -1,6 +1,6 @@
 import "./Navbar.css";
-
-import { Link} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom"
 // import logo from "../../../public/fit2B_logo_light.svg";
 // import homeIcon from "./MenuIcons/home.svg";
 // import challengeIcon from "./MenuIcons/challenge.svg";
@@ -8,9 +8,15 @@ import { Link} from "react-router-dom"
 // import settingIcon from "./MenuIcons/setting.svg";
 // import logoutIcon from "./MenuIcons/logout.svg";
 
-const Navbar = () =>{
-
-    return(
+const Navbar = () => {
+    let navigate = useNavigate();
+    function handleLogout() {
+        localStorage.removeItem("token")
+        // sessionStorage.clear
+        navigate("/login");
+        navigate("/login");
+    }
+    return (
         <div className="header">
             <img src='../../../public/fit2B_logo_light.svg' className="logo" alt="logo" />
             <nav className="Navbar">
@@ -18,9 +24,9 @@ const Navbar = () =>{
                 {/* <a href="#"><img src='../../../public/MenuIcons/challenge.svg' className="navMenu" alt="challengeIcon" /></a> */}
                 <Link to="/activity"><img src='../../../public/MenuIcons/activities.svg' className="navMenu" alt="activitiesIcon" /></Link>
                 <Link to="/edit-profile"><img src='../../../public/MenuIcons/setting.svg' className="navMenu" alt="settingIcon" /></Link>
-                <Link to="#"><img src='../../../public/MenuIcons/logout.svg' className="navMenu" alt="logoutIcon" /></Link>
+                <a onClick={handleLogout} ><img src='../../../public/MenuIcons/logout.svg' className="navMenu" alt="logoutIcon" /></a>
             </nav>
-      </div>
+        </div>
     );
 
 };
