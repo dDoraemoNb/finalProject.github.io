@@ -33,7 +33,7 @@ export const ActivitiesList = (props) => {
                                 </p>
                                 <div class="activities-footer">
                                     <ul>
-                                        <li class='activities-list-description'>17:70</li>
+                                        <li class='activities-list-description'>{list.time}</li>
                                         <Link to='/edit-activities' list={list.description} ><li class='description-btn'><a href="#"><i class='bx bx-edit'></i></a></li></Link>
                                         <li class='description-btn'><a href="#"><i class='bx bxs-trash' ></i></a></li>
                                     </ul>

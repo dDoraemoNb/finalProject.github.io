@@ -35,8 +35,8 @@ const App = (props) => {
 
   const [activitys, setActivitys] = useState(
     [
-      { img: '010', title: 'ไปวิ่งกับน้องหมา', type: 'Jogging', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ' },
-      { img: '002', title: 'ไปปาก', type: 'swim', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+      // { img: '010', title: 'ไปวิ่งกับน้องหมา', type: 'Jogging', description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ' },
+      // { img: '002', title: 'ไปปาก', type: 'swim', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
     ]
   );
 
