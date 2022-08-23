@@ -1,44 +1,29 @@
 import axios from 'axios';
-import React,{ useEffect ,useState} from 'react';
-import { Link } from "react-router-dom"
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './ActivitiesList.css';
 import useToken from '../../useToken';
+import Swal from 'sweetalert2';
 
 
 // props pageninate = false
 export const ActivitiesList = (props) => {
-    const { token, setToken } = useToken();
-    const [activitys, setActivitys] = useState(
-        [
-          {
-            img: '010', title: 'ไปวิ่งกับน้องหมา', type: 'Jogging',
-            description: 'It is a long established fact that a reader will be distracted bythe readable content of a page when looking at its layout. '
-          },
-          {
-            img: '002', title: 'ไปปาก', type: 'swim',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-          },
-        ]
-      );
-      const getactivities = async (user = token) => {
-          const response = await axios.get('http://localhost:8080/activities', { params: { user_id: user } })
-      
-          setActivitys(response.data)
-        }
-      
+    console.log(props.Activity)
 
-
-
-    useEffect(() => {
-        getactivities()
-        //request with limit
-        //response limit
-    },[])
-
+    if (!props.Activity ) {
+        return (
+            <div className="activities-list">
+                <div className="activities-title">
+                    <h2> NO OBJECT</h2>
+                </div>
+            </div>
+        )
+    }
     return (
         <div className="activities-list">
             {
-                activitys.map(list => {
+
+                props.Activity.map(list => {
 
                     return (
                         <div className="activities-list-form">
@@ -62,11 +47,9 @@ export const ActivitiesList = (props) => {
                                 </div>
                                 <div class="activities-footer">
                                     <ul>
-
                                         <li class='activities-list-description'>30 mins</li>
-                                        <Link to='/edit-activities' list={list.description} ><li class='description-btn'><a href="#"><i class='bx bx-edit'></i></a></li></Link>
-
-                                        <li class='description-btn'><a href="#"><i class='bx bxs-trash' ></i></a></li>
+                                        <li class='description-btn'><Link to={`/edit-activities/${list._id}`} ><i class='bx bx-edit'></i></Link></li>
+                                        <li class='description-btn'><a href="#" onClick={e => props.deleteactivity(e, list._id)}><i class='bx bxs-trash' ></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -74,8 +57,13 @@ export const ActivitiesList = (props) => {
                     )
                 })
             }
+        </div>
+    );
+}
 
-            {/* <div className="activities-list-form">
+export default ActivitiesList;
+
+{/* <div className="activities-list-form">
                 <div className="activities-title">
                     <div className='title'>
                         <img src='/public/activities_images/010.svg' />
@@ -115,9 +103,3 @@ export const ActivitiesList = (props) => {
                     </p>
                 </div>
             </div> */}
-        </div>
-    );
-}
-
-export default ActivitiesList;
-

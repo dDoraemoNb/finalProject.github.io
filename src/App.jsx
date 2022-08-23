@@ -28,12 +28,12 @@ function Authentication() {
 const App = (props) => {
   const [count, setCount] = useState(0)
   const { token, setToken } = useToken();
-  const [profile, setProfile] = useState();
-
-  function getdetail(detail) {
-    setProfile(detail)
-  }
+  // const [profile, setProfile] = useState();
   
+  // function getdetail(detail) {
+  //   setProfile(detail)
+  // }
+
   // const [activitys, setActivitys] = useState(
   //   [
   //     {
@@ -92,10 +92,10 @@ const App = (props) => {
         {/* <Route path='login' element={<Login setToken={setToken} />} ></Route>
         <Route path='signup' element={<Signup />} ></Route> */}
         <Route element={<Authentication />} >
-          <Route index element={<Dashboard limit={5} profile={getdetail}/>} ></Route>
-          <Route path="activity" element={<Activity />} ></Route>
+          <Route index element={<Dashboard limit={5} />} ></Route>
+          <Route path="activity" element={<Activity limit={10} />} ></Route>
           <Route path="add" element={<Add />} ></Route>
-          <Route path='edit-profile' element={<Edit profile={profile}/>} ></Route>
+          <Route path='edit-profile' element={<Edit />} ></Route>
           <Route path='edit-activities/:activity_id' element={<EditActivity />}></Route>
         </Route>
 

@@ -53,9 +53,17 @@ const Signup = (props) => {
                         position: 'center',
                         icon: 'success',
                         title: 'Your registration has been successfully completed.',
-                        showConfirmButton: false,
-                        timer: 1500
-                    }), navigate('/')
+                        showConfirmButton: true,
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            
+                                navigate('/')
+                            
+                            
+                        }
+                        
+                    })
+
                 ).catch(
                     (error) => {
                         if (error.response) console.log(error.response.data);

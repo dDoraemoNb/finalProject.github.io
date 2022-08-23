@@ -3,10 +3,13 @@ import "./AddActivities.css";
 import DatePicker from "react-datepicker";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'
+import useToken from '../../useToken';
 
 
 function AddActivities(props) {
   const [startDate, setStartDate] = useState(new Date());
+  const { token, setToken } = useToken();
+
   const [addTitle, setTitle] = useState();
   const [addDescription, setDescription] = useState();
   const [addTime, setTime] = useState();
@@ -42,6 +45,7 @@ function AddActivities(props) {
 
 
     const data = {
+      user_id: token,
       title: addTitle,
       description: addDescription,
       time: addTime,
