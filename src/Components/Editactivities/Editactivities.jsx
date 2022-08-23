@@ -29,6 +29,7 @@ function Editactivities(props) {
         setActivitys(response.data)
         if (response.data.date) {
             const date = new Date(response.data.date)
+
             setStartDate(date)
         }
         setupdateTitle(response.data.title)
@@ -108,17 +109,27 @@ function Editactivities(props) {
                         <div className="info" >
                             <input className="Title" name="Title" type="text" defaultValue={activity.title} onChange={e => setupdateTitle(e.target.value)} placeholder="Title" />
                             <div className="selectActivity">
-                                <select value={selectedType} onChange={e => setType(e.target.value)} >
-                                    <option value=""> -----------</option>
-                                    <option value="Running">Running</option>
-                                    <option value="Jogging">Jogging</option>
-                                    <option value="Jump Rope">Jump Rope</option>
-                                    <option value="Weight Training">Weight Training</option>
-                                    <option value="Walking">Walking</option>
-                                    <option value="Yoga">Yoga</option>
-                                </select>
+                                <div className="test">
+                                    <p className="label">SelectActivities</p>
+                                    <select value={selectedType} onChange={e => setType(e.target.value)} >
+                                        <option value=""> -----------</option>
+                                        <option value="Running">Running</option>
+                                        <option value="Jogging">Jogging</option>
+                                        <option value="Hikking">Hikking</option>
+                                        <option value="Swimming">Swimming</option>
+                                        <option value="Walking">Walking</option>
+                                        <option value="Yoga">Yoga</option>
+                                    </select>
+                                </div>
+                                <div className="test">
+                                    <p className="label">DATE</p>
                                 <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} maxDate={new Date()} />
+                                </div>
+                                <div className="test">
+                                    <p className="label">TIME</p>
                                 <input type="time" placeholder="00:00" defaultValue={activity.time} onChange={e => setupdateTime(e.target.value)} />
+                                </div>
+
                             </div>
                         </div>
                         <br />

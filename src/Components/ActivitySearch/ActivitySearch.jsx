@@ -101,7 +101,7 @@ const ActivitySearch = (props) => {
             <div className="search_form">
                 <form onSubmit={handleSearch}>
                     <label for="date">Date</label>
-                    <DatePicker
+                    <DatePicker className="testdate"
                         selectsRange={true}
                         startDate={startDate}
                         endDate={endDate}
@@ -123,9 +123,12 @@ const ActivitySearch = (props) => {
                         <option value="Yoga">Yoga</option>
 
                     </select>
-                    <div>
+
+                    <div className="search-btn">
                         <button type="submit">Search</button>
                     </div>
+
+
 
                 </form>
                 <Link to="/add" className='btnAddActivities'>+Add Activity</Link>

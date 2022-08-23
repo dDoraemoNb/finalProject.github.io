@@ -30,10 +30,11 @@ export const ActivitiesList = (props) => {
                             <div className="activities-title">
                                 <div className='title'>
                                     <img src={`activities_images/${list.img}.svg`} />
-                                    <div>
-                                        <h4 className="activities-list-title">
+                                    <div className="activities-list-title">
+                                        <h4>
                                             {list.title}
                                         </h4>
+                                        <h3>08 Aug 2022</h3>
                                     </div>
                                 </div>
                                 <div>
@@ -41,14 +42,12 @@ export const ActivitiesList = (props) => {
                                 </div>
                             </div>
                             <div className="activities-description">
-
-
-                                <p className="activities-list-description">
-                                    {list.description}
-                                </p>
+                                <div className="activities-list-description">
+                                <p> {list.description} </p>
+                                </div>
                                 <div class="activities-footer">
                                     <ul>
-                                        <li class='activities-list-description'>17:70</li>
+                                        <li class='activities-list-description'>30 mins</li>
                                         <li class='description-btn'><Link to={`/edit-activities/${list._id}`} ><i class='bx bx-edit'></i></Link></li>
                                         <li class='description-btn'><a href="#" onClick={e => props.deleteactivity(e, list._id)}><i class='bx bxs-trash' ></i></a></li>
                                     </ul>
