@@ -49,3 +49,17 @@ select{
     display: flex;
     align-items: center;
 }
+
+.search-btn button{
+    border: 1px solid #F8763D;
+    padding: 10px 40px;
+    margin-top: 2rem;
+    margin: 0 10px;
+    border-radius: 5px;
+    font-weight: 700;
+    color: #F8763D;
+}
+
+.testdate {
+    width: 75%;
+}
