@@ -125,3 +125,15 @@
     border-radius: 3px;
     padding: 0 0.5rem 0 1.5rem;
 }
+
+.noObject{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #F8763D;
+    height: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    align-items: center;
+    font-size: 2rem;
+}

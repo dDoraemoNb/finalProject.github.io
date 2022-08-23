@@ -10,12 +10,14 @@ import Swal from 'sweetalert2';
 export const ActivitiesList = (props) => {
     console.log(props.Activity)
 
-    if (!props.Activity ) {
+    if (props.Activity[0] === undefined) {
         return (
             <div className="activities-list">
-                <div className="activities-title">
-                    <h2> NO OBJECT</h2>
-                </div>
+                
+                    <div className='noObject'>
+                     <h2> NO ACTIVITY</h2>
+                    </div>
+                
             </div>
         )
     }
@@ -47,7 +49,7 @@ export const ActivitiesList = (props) => {
                                 </div>
                                 <div class="activities-footer">
                                     <ul>
-                                        <li class='activities-list-description'>30 mins</li>
+                                        <li class='activities-list-description'>{list.time} MIN</li>
                                         <li class='description-btn'><Link to={`/edit-activities/${list._id}`} ><i class='bx bx-edit'></i></Link></li>
                                         <li class='description-btn'><a href="#" onClick={e => props.deleteactivity(e, list._id)}><i class='bx bxs-trash' ></i></a></li>
                                     </ul>
