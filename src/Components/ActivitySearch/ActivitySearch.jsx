@@ -15,7 +15,7 @@ const ActivitySearch = () => {
             <div className="search_form">
                 <form action="./action_page.php">
                     <label for="date">Date</label>
-                    <DatePicker
+                    <DatePicker className="testdate"
                         selectsRange={true}
                         startDate={startDate}
                         endDate={endDate}
@@ -37,7 +37,9 @@ const ActivitySearch = () => {
                         <option value="Yoga">Yoga</option>
 
                     </select>
-
+                    <div className="search-btn">
+                        <button type="submit">Search</button>
+                    </div>
 
 
                 </form>
