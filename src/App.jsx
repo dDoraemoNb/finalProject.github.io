@@ -92,8 +92,8 @@ const App = (props) => {
         {/* <Route path='login' element={<Login setToken={setToken} />} ></Route>
         <Route path='signup' element={<Signup />} ></Route> */}
         <Route element={<Authentication />} >
-          <Route index element={<Dashboard limit={5} />} ></Route>
-          <Route path="activity" element={<Activity limit={10} />} ></Route>
+          <Route index element={<Dashboard  />} ></Route>
+          <Route path="activity" element={<Activity />} ></Route>
           <Route path="add" element={<Add />} ></Route>
           <Route path='edit-profile' element={<Edit />} ></Route>
           <Route path='edit-activities/:activity_id' element={<EditActivity />}></Route>

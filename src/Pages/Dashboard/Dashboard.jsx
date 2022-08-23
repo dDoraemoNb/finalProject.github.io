@@ -1,14 +1,30 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import Profile from '../../Components/Profile/Profile'
 import ContentDashboard from '../../Components/ContentDashboard/ContentDashboard'
 import Navbar from '../../Components/Navbar/Navbar'
 import { Link} from "react-router-dom"
 import './Dashboard.css'
 import ActivitiesList from '../../Components/ActivitiesList/ActivitiesList'
-
+import axios from 'axios'
+import useToken from '../../useToken'
 
 
 const Dashboard = (props) => {
+    const [activities,setActivitys] = useState([]);
+    const { token, setToken } = useToken();
+
+    const getactivities = async (user = token) => {
+        const response = await axios.get('http://localhost:8080/activities', { params: { user_id: user,limit:5 } })
+
+        setActivitys(response.data)
+    }
+
+    useEffect(() => {
+        getactivities()
+        //request with limit
+        //response limit
+        
+    }, [])
 
     return (
         <div className='main-web'>
@@ -29,7 +45,7 @@ const Dashboard = (props) => {
                             </div>
                         </div>
                         <ContentDashboard />
-                        <ActivitiesList limit={props.limit}/>
+                        <ActivitiesList  Activity={activities}/>
                         
                     </div>
                     <div className="right-content">

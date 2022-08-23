@@ -18,7 +18,7 @@ const getListActivity = async (list) => {
 }
 
     const getactivities = async (user = token) => {
-        const response = await axios.get('http://localhost:8080/activities', { params: { user_id: user,limit:props.limit } })
+        const response = await axios.get('http://localhost:8080/activities', { params: { user_id: user,limit:10 } })
 
         setActivitys(response.data)
     }
@@ -64,7 +64,7 @@ const getListActivity = async (list) => {
                     <Navbar />
                 </div>
                 <ActivitySearch getList={getListActivity}/>
-                <ActivitiesList limit={props.limit} Activity={activities} deleteactivity={handleDelete} />
+                <ActivitiesList Activity={activities} deleteactivity={handleDelete} />
             </div>
         </div>
     )
