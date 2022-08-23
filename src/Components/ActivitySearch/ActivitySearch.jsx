@@ -1,19 +1,105 @@
 import "./ActivitySearch.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import React from "react";
-import { useState } from 'react'
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-const ActivitySearch = () => {
+import axios from 'axios';
+import { checkPropTypes } from "prop-types";
+import useToken from "../../useToken";
+
+const ActivitySearch = (props) => {
+    const {token , setToken} = useToken();
     const [dateRange, setDateRange] = useState([null, null]);
     const [startDate, endDate] = dateRange;
+    const [searchType, setType] = useState();
+    const [activities, setActivities] = useState([]);
+
+
+
+
+    function handleSearch(e) {
+        e.preventDefault();
+
+        if (searchType && startDate && endDate) {
+            const data = {
+                type: searchType,
+                startDate: startDate,
+                endDate: endDate
+            }
+            const getActivityByAll = async () => {
+                const response = await axios.get(`http://localhost:8080/activities/search/all`, data).then()
+                setActivities(response.data)
+            }
+            getActivityByAll();
+
+        } else if (startDate) {
+            if (endDate) {
+                const data = {
+                    startDate: startDate,
+                    endDate: endDate
+                }
+                const getActivityByDateEndDate = async () => {
+                    const response = await axios.get(`http://localhost:8080/activities/search/dateEnd`, data).then()
+                    setActivities(response.data)
+                }
+                getActivityByDateEndDate();
+            } else if (searchType) {
+                const data = {
+                    startDate: startDate,
+                    type: searchType
+                }
+                const getActivityByDateType = async () => {
+                    const response = await axios.get(`http://localhost:8080/activities/search/datetype`, data).then()
+                    setActivities(response.data)
+                }
+                getActivityByDateType();
+            } else {
+                const getActivityByDate = async () => {
+                    const response = await axios.get(`http://localhost:8080/activities/search/date`, { params: { date: startDate } }).then()
+                    setActivities(response.data)
+                }
+
+            }
+            getActivityByDate();
+
+        } else if(searchType){
+
+            const type = searchType
+
+            const getActivityByType = async () => {
+                const response = await axios.get(`http://localhost:8080/activities/search/type`, { params: { type: type } }).then()
+                setActivities(response.data)
+            }
+            getActivityByType();
+            const getLiset = () => {
+                props.getList(activities)
+                
+            }
+            getLiset();
+            // console.log(type)
+        }else{
+            const getActivity = async (user = token) => {
+                const response = await axios.get('http://localhost:8080/activities', { params: { user_id: user,limit:props.limit } }).then()
+                setActivities(response.data)
+            }
+            getActivity();
+            const getLiset = () => {
+                props.getList(activities)
+                console.log(activities)
+            }
+            getLiset();
+        }
+
+    }
+
+
     return (
         <div className="Activities">
             <h2 className="ActivitiesTitle">
                 Activities
             </h2>
             <div className="search_form">
-                <form action="./action_page.php">
+                <form onSubmit={handleSearch}>
                     <label for="date">Date</label>
                     <DatePicker
                         selectsRange={true}
@@ -27,21 +113,25 @@ const ActivitySearch = () => {
                     />
 
                     <label for="type_activity">Type</label>
-                    <select name="type_activity" id="dropdown">
-                        <option value=""> -----------</option>
+                    <select name="type_activity" id="dropdown" onChange={e => setType(e.target.value)}>
+                        <option value=""> ALL </option>
                         <option value="Running">Running</option>
                         <option value="Jogging">Jogging</option>
-                        <option value="Hikking">Hikking</option>
-                        <option value="Swimming">Swimming</option>
+                        <option value="Jump Rope">Jump Rope</option>
+                        <option value="Weight Training">Weight Training</option>
                         <option value="Walking">Walking</option>
                         <option value="Yoga">Yoga</option>
 
                     </select>
-
-                    <Link to="/add" className='btnAddActivities'>+Add Activity</Link>
+                    <div>
+                        <button type="submit">Search</button>
+                    </div>
 
                 </form>
-                
+                <Link to="/add" className='btnAddActivities'>+Add Activity</Link>
+
+
+
             </div>
         </div>
     );

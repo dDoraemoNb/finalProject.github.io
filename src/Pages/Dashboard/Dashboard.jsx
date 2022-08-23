@@ -29,10 +29,11 @@ const Dashboard = (props) => {
                             </div>
                         </div>
                         <ContentDashboard />
-                        <ActivitiesList list={props.list}/>
+                        <ActivitiesList limit={props.limit}/>
+                        
                     </div>
                     <div className="right-content">
-                        <Profile profile={props.profile} />
+                        <Profile />
                     </div>
                 </div>
             </div>

@@ -7,6 +7,7 @@ import axios from 'axios';
 
 const Profile = (props) => {
     const { token, setToken } = useToken();
+
     const [profile, setProfile] = useState(
         { firstName: 'Aman', lastName: 'Stickman', imgProfile: '001', birthday: "1900-10-28", height: 185, weight: 65 }
       );
@@ -19,12 +20,12 @@ const Profile = (props) => {
 
       useEffect(() => {
         getProfile();
-        getdetail()
+        // getdetail()
     }, []);
 
-    const getdetail=()=>{
-        props.profile(profile)
-      }
+    // const getdetail=()=>{
+    //     props.profile(profile)
+    //   }
     function getAge( dateString ) 
 {
     let today = new Date();
