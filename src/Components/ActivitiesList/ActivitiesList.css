@@ -19,7 +19,7 @@
 }
 
 .title img {
-    height: 35px;
+    height: 36px;
     align-items: left;
 }
 
@@ -34,31 +34,40 @@
     align-items: center;
 }
 
-.activities-list-title h4 {
+.activities-list-title {
     color: white;
     align-items: left;
 }
+.activities-list-title h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+.activities-list-title h3{
+    padding-top: 5px;
+    font-size: 16px;
+}
 
-.activity-type p {
+
+.activity-type {
     color: white;
     align-items: right;
-    font-size: 1em;
+    font-size: 24px;
 }
 
 .activities-description {
     display: block;
-    min-height: 50px;
+    padding: 10px 0;
+    min-height: 100%;
     max-width: 100%;
     background-color: white;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    line-height: 2;
+    line-height: 1.5;
 }
 
 .activities-description p {
     margin: 0;
-    padding: 15px 20px 0px 20px;
-    text-indent: 20px;
+    padding-left: 15px;
 }
 
 .activities-list-form {
@@ -67,7 +76,6 @@
 
 .activities-description .bx {
     font-size: 2rem;
- 
     padding-right: 10px;
     color: black;
 }
@@ -85,7 +93,8 @@
     display: flex;
     flex: row wrap;
     justify-content: flex-end;
-    padding-left: 0;
+    padding-left: 15px;
+    padding-top: 5px;
 }
 
 .activities-footer li:first-child {
@@ -99,7 +108,6 @@
 .activities-footer li {
     color: black;
     font-size: 1.2rem;
-    height: 1.5rem;
     letter-spacing: 1px;
     line-height: 1.5rem;
     text-align: center;
@@ -114,7 +122,6 @@
 }
 
 .activities-list-description {
-
     border-radius: 3px;
-    padding: 0 .5rem;
+    padding: 0 0.5rem 0 1.5rem;
 }
