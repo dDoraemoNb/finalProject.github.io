@@ -37,13 +37,14 @@ const ActivitySearch = () => {
                         <option value="Yoga">Yoga</option>
 
                     </select>
+
                     <div className="search-btn">
                         <button type="submit">Search</button>
                     </div>
+                    <Link to="/add" className='btnAddActivities'>+Add Activity</Link>
 
 
                 </form>
-                <Link to="/add" className='btnAddActivities'>+Add Activity</Link>
                 
             </div>
         </div>

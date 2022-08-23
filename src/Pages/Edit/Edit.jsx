@@ -4,6 +4,7 @@ import React from "react";
 import "./Edit.css"
 
 const Edit = (props) => {
+    console.log(props.profile)
     return (
         <div className='main-web'>
             <div className="form">
@@ -11,7 +12,7 @@ const Edit = (props) => {
                     <Navbar />
                 </div>
 
-                <Editprofile profile2={props.profile1}/>
+                <Editprofile profile={props.profile}/>
             </div>
         </div>
     )

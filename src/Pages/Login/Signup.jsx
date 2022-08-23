@@ -1,8 +1,9 @@
 import "./Login.css";
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
+import Swal from "sweetalert2";
 
 const Signup = (props) => {
     const [startDate, setStartDate] = useState(new Date());
@@ -16,7 +17,7 @@ const Signup = (props) => {
     const [checkPassword, setCheckPassWord] = useState();
     // const [info,setInfo] = useState([]);
     const navigate = useNavigate();
-    
+
     function handlesubmit_sigup(e) {
         e.preventDefault();
         const data = {
@@ -26,37 +27,44 @@ const Signup = (props) => {
             lastName: lastName,
             height: height,
             weight: weight,
-            imgProfile:'img_avatar2 .png',
+            imgProfile: 'img_avatar2 .png',
             birthday: startDate,
             password: password,
             checkPassword: checkPassword
-
-            // user_Name: info.userName,
-            // email: info.email,
-            // firstName: info.firstName,
-            // lastName: info.lastName,
-            // height: info.height,
-            // weight: info.weight,
-            // birthday: info.startDate,
-            // password: info.passWord,
-            // check_password: info.checkPassWord
         };
-        axios.post('http://localhost:8080/users/signup', data).then(
-            navigate('/')
-        ).catch(
 
-            err => {
-                console.log(err)
+        const check = async (user_name = data.user_name) => {
+            const response = await axios.get('http://localhost:8080/users/signup/check', { params: { user_name: user_name } });
+            if (response.data) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'This Username is already use.',
+                })
+            } else if (data.password !== data.checkPassword) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Passwords do not match.',
+                })
+            } else {
+                axios.post('http://localhost:8080/users/signup', data).then(
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Your registration has been successfully completed.',
+                        showConfirmButton: false,
+                        timer: 1500
+                    }), navigate('/')
+                ).catch(
+                    (error) => {
+                        if (error.response) console.log(error.response.data);
+                    }
+                )
             }
-        )
-        // console.log(data)
+        }
+        check()
     }
-    // function checkInfo(){
-    //     if(e.checkPassword.value !==e.passWord.value){
-
-    //     }
-    // }
-
     return (
         <div className="main-login">
             <div className='bg-form'>
