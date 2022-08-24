@@ -8,7 +8,7 @@ import { checkPropTypes } from "prop-types";
 import useToken from "../../useToken";
 
 const ActivitySearch = (props) => {
-    const {token , setToken} = useToken();
+    const { token, setToken } = useToken();
     const [dateRange, setDateRange] = useState([null, null]);
     const [startDate, endDate] = dateRange;
     const [searchType, setType] = useState();
@@ -58,11 +58,11 @@ const ActivitySearch = (props) => {
                     const response = await axios.get(`http://localhost:8080/activities/search/date`, { params: { date: startDate } }).then()
                     setActivities(response.data)
                 }
-
+                getActivityByDate();
             }
-            getActivityByDate();
 
-        } else if(searchType){
+
+        } else if (searchType) {
 
             const type = searchType
 
@@ -73,13 +73,13 @@ const ActivitySearch = (props) => {
             getActivityByType();
             const getLiset = () => {
                 props.getList(activities)
-                
+
             }
             getLiset();
             // console.log(type)
-        }else{
+        } else {
             const getActivity = async (user = token) => {
-                const response = await axios.get('http://localhost:8080/activities', { params: { user_id: user,limit:props.limit } }).then()
+                const response = await axios.get('http://localhost:8080/activities', { params: { user_id: user, limit: props.limit } }).then()
                 setActivities(response.data)
             }
             getActivity();
