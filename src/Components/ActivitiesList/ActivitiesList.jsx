@@ -36,7 +36,7 @@ export const ActivitiesList = (props) => {
                                         <h4>
                                             {list.title}
                                         </h4>
-                                        <h3>08 Aug 2022</h3>
+                                        <h3>{new Date(list.date).toDateString()}</h3>
                                     </div>
                                 </div>
                                 <div>

@@ -8,89 +8,10 @@ import { checkPropTypes } from "prop-types";
 import useToken from "../../useToken";
 
 const ActivitySearch = (props) => {
-    const { token, setToken } = useToken();
-    const [dateRange, setDateRange] = useState([null, null]);
-    const [startDate, endDate] = dateRange;
-    const [searchType, setType] = useState();
-    const [activities, setActivities] = useState([]);
+    
+    // const [activities, setActivities] = useState([]);
 
-
-
-
-    function handleSearch(e) {
-        e.preventDefault();
-
-        if (searchType && startDate && endDate) {
-            const data = {
-                type: searchType,
-                startDate: startDate,
-                endDate: endDate
-            }
-            const getActivityByAll = async () => {
-                const response = await axios.get(`http://localhost:8080/activities/search/all`, data).then()
-                setActivities(response.data)
-            }
-            getActivityByAll();
-
-        } else if (startDate) {
-            if (endDate) {
-                const data = {
-                    startDate: startDate,
-                    endDate: endDate
-                }
-                const getActivityByDateEndDate = async () => {
-                    const response = await axios.get(`http://localhost:8080/activities/search/dateEnd`, data).then()
-                    setActivities(response.data)
-                }
-                getActivityByDateEndDate();
-            } else if (searchType) {
-                const data = {
-                    startDate: startDate,
-                    type: searchType
-                }
-                const getActivityByDateType = async () => {
-                    const response = await axios.get(`http://localhost:8080/activities/search/datetype`, data).then()
-                    setActivities(response.data)
-                }
-                getActivityByDateType();
-            } else {
-                const getActivityByDate = async () => {
-                    const response = await axios.get(`http://localhost:8080/activities/search/date`, { params: { date: startDate } }).then()
-                    setActivities(response.data)
-                }
-                getActivityByDate();
-            }
-
-
-        } else if (searchType) {
-
-            const type = searchType
-
-            const getActivityByType = async () => {
-                const response = await axios.get(`http://localhost:8080/activities/search/type`, { params: { type: type } }).then()
-                setActivities(response.data)
-            }
-            getActivityByType();
-            const getLiset = () => {
-                props.getList(activities)
-
-            }
-            getLiset();
-            // console.log(type)
-        } else {
-            const getActivity = async (user = token) => {
-                const response = await axios.get('http://localhost:8080/activities', { params: { user_id: user, limit: props.limit } }).then()
-                setActivities(response.data)
-            }
-            getActivity();
-            const getLiset = () => {
-                props.getList(activities)
-                console.log(activities)
-            }
-            getLiset();
-        }
-
-    }
+    
 
 
     return (
@@ -99,21 +20,21 @@ const ActivitySearch = (props) => {
                 Activities
             </h2>
             <div className="search_form">
-                <form onSubmit={handleSearch}>
+                <form onSubmit={props.search}>
                     <label for="date">Date</label>
                     <DatePicker className="testdate"
                         selectsRange={true}
-                        startDate={startDate}
-                        endDate={endDate}
+                        startDate={props.startDate}
+                        endDate={props.endDate}
                         maxDate={new Date()}
                         onChange={(update) => {
-                            setDateRange(update);
+                            props.setDateRange(update);
                         }}
                         isClearable={true}
                     />
 
                     <label for="type_activity">Type</label>
-                    <select name="type_activity" id="dropdown" onChange={e => setType(e.target.value)}>
+                    <select name="type_activity" id="dropdown" onChange={e => props.setType(e.target.value)}>
                         <option value=""> ALL </option>
                         <option value="Running">Running</option>
                         <option value="Jogging">Jogging</option>
