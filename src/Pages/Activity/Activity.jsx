@@ -57,26 +57,28 @@ const Activity = (props) => {
         e.preventDefault();
 
         if (searchType && startDate && endDate) {
-            const data = {
-                type: searchType,
-                startDate: startDate,
-                endDate: endDate
-            }
+
+            const start = new Date(startDate)
+            const end = new Date(endDate)
+            start.setHours(0, 0, 0, 0)
+            end.setHours(23, 59, 59, 999)
+
             const getActivityByAll = async () => {
-                const response = await instance.get(`/activities/search/all`, { params: data })
+                const response = await instance.get(`/activities/search/all`, { params: { start: start, end: end, type: searchType } })
                 setActivitys(response.data)
             }
             getActivityByAll();
 
         } else if (startDate) {//
             if (endDate) {//
-                const data = {
-                    startDate: startDate,
-                    endDate: endDate
-                }
-                console.log(data)
+                const start = new Date(startDate)
+                const end = new Date(endDate)
+                start.setHours(0, 0, 0, 0)
+                end.setHours(23, 59, 59, 999)
+
+
                 const getActivityByDateEndDate = async () => {
-                    const response = await instance.get('/activities/search/dateEnd', { params: data })
+                    const response = await instance.get('/activities/search/dateEnd', { params: { start: start, end: end } })
                     setActivitys(response.data)
 
 
@@ -85,18 +87,25 @@ const Activity = (props) => {
 
 
             } else if (searchType) {//
-                const data = {
-                    startDate: startDate,
-                    type: searchType
-                }
+                const start = new Date(startDate)
+                const end = new Date(startDate)
+                start.setHours(0, 0, 0, 0)
+                end.setHours(23, 59, 59, 999)
+
                 const getActivityByDateType = async () => {
-                    const response = await instance.get(`/activities/search/datetype`, { params: data })
+                    const response = await instance.get(`/activities/search/datetype`, { params: { start: start, end: end, type: searchType } })
                     setActivitys(response.data)
                 }
                 getActivityByDateType();
             } else {//
+                const start = new Date(startDate)
+                const end = new Date(startDate)
+
+                start.setHours(0, 0, 0, 0)
+                end.setHours(23, 59, 59, 999)
+
                 const getActivityByDate = async () => {
-                    const response = await instance.get(`/activities/search/date`, { params: { date: startDate } })
+                    const response = await instance.get(`/activities/search/date`, { params: { start: start, end: end } })
                     setActivitys(response.data)
                 }
                 getActivityByDate();
