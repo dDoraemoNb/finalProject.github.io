@@ -20,6 +20,7 @@ function Editactivities(props) {
     // const [updateType, setupdateType] = useState();
 
 
+    
     const navigate = useNavigate()
 
     // let date = new Date(activity.date)
