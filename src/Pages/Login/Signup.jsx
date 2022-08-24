@@ -87,7 +87,7 @@ const Signup = (props) => {
                             <div id='input-signup'>
                                 <div className='item'><input id='input' type="text" placeholder="Username" name="uname"
                                     onChange={e => setUserName(e.target.value)} required /></div>
-                                <div className='item'><input id='email' type="text" placeholder="Email" name="email"
+                                <div className='item'><input id='email' type="email" placeholder="Email" name="email"
                                     onChange={e => setEmail(e.target.value)} required /></div>
                                 <div className='item'><input id='input' type="text" placeholder="First Name" name="fname"
                                     onChange={e => setFirstName(e.target.value)} required /></div>

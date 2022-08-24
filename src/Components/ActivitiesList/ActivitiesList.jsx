@@ -13,16 +13,18 @@ export const ActivitiesList = (props) => {
     if (props.Activity[0] === undefined) {
         return (
             <div className="activities-list">
-                
-                    <div className='noObject'>
-                     <h2> NO ACTIVITY</h2>
-                    </div>
-                
+                <div className='noObject'>
+                    <h2> NO ACTIVITY</h2>
+                </div>
+
             </div>
         )
     }
+
+
     return (
         <div className="activities-list">
+            
             {
 
                 props.Activity.map(list => {
@@ -45,7 +47,7 @@ export const ActivitiesList = (props) => {
                             </div>
                             <div className="activities-description">
                                 <div className="activities-list-description">
-                                <p> {list.description} </p>
+                                    <p> {list.description} </p>
                                 </div>
                                 <div class="activities-footer">
                                     <ul>
@@ -59,6 +61,7 @@ export const ActivitiesList = (props) => {
                     )
                 })
             }
+            
         </div>
     );
 }
