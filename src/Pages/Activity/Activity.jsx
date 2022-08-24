@@ -6,6 +6,7 @@ import './Activity.css'
 import useToken from '../../useToken';
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import { instance } from '../../api'
 
 const Activity = (props) => {
     const [activities, setActivitys] = useState([]);
@@ -13,8 +14,8 @@ const Activity = (props) => {
     const [dateRange, setDateRange] = useState([null, null]);
     const [startDate, endDate] = dateRange;
     const [searchType, setType] = useState();
-    console.log(startDate)
-    console.log(searchType)
+    // console.log(startDate)
+    // console.log(searchType)
     // const navigate = useNavigate();
     // console.log(props.limit)
 
@@ -23,7 +24,7 @@ const Activity = (props) => {
     }
 
     const getactivities = async (user = token) => {
-        const response = await axios.get('http://localhost:8080/activities', { params: { user_id: user, limit: 10 } })
+        const response = await instance.get('/activities', { params: { user_id: user, limit: 10 } })
 
         setActivitys(response.data)
     }
@@ -44,7 +45,7 @@ const Activity = (props) => {
                     'Your file has been deleted.',
                     'success'
                 )
-                axios.delete(`http://localhost:8080/activities/${params}`).then(
+                instance.delete(`/activities/${params}`).then(
                     window.location.reload(false)
                 )
 
@@ -62,7 +63,7 @@ const Activity = (props) => {
                 endDate: endDate
             }
             const getActivityByAll = async () => {
-                const response = await axios.get(`http://localhost:8080/activities/search/all`, { params: data })
+                const response = await instance.get(`/activities/search/all`, { params: data })
                 setActivitys(response.data)
             }
             getActivityByAll();
@@ -75,7 +76,7 @@ const Activity = (props) => {
                 }
                 console.log(data)
                 const getActivityByDateEndDate = async () => {
-                    const response = await axios.get('http://localhost:8080/activities/search/dateEnd', { params: data })
+                    const response = await instance.get('/activities/search/dateEnd', { params: data })
                     setActivitys(response.data)
 
 
@@ -89,13 +90,13 @@ const Activity = (props) => {
                     type: searchType
                 }
                 const getActivityByDateType = async () => {
-                    const response = await axios.get(`http://localhost:8080/activities/search/datetype`, { params: data })
+                    const response = await instance.get(`/activities/search/datetype`, { params: data })
                     setActivitys(response.data)
                 }
                 getActivityByDateType();
             } else {//
                 const getActivityByDate = async () => {
-                    const response = await axios.get(`http://localhost:8080/activities/search/date`, { params: { date: startDate } })
+                    const response = await instance.get(`/activities/search/date`, { params: { date: startDate } })
                     setActivitys(response.data)
                 }
                 getActivityByDate();
@@ -107,7 +108,7 @@ const Activity = (props) => {
             const type = searchType
 
             const getActivityByType = async () => {
-                const response = await axios.get(`http://localhost:8080/activities/search/type`, { params: { type: type } })
+                const response = await instance.get(`/activities/search/type`, { params: { type: type } })
                 setActivitys(response.data)
             }
             getActivityByType();
@@ -115,7 +116,7 @@ const Activity = (props) => {
             // console.log(type)
         } else {//
             const getActivity = async (user = token) => {
-                const response = await axios.get('http://localhost:8080/activities', { params: { user_id: user, limit: 10 } })
+                const response = await instance.get('/activities', { params: { user_id: user, limit: 10 } })
                 setActivitys(response.data)
             }
             getActivity();

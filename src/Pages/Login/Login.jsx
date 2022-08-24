@@ -5,7 +5,7 @@ import axios from 'axios';
 import Swal from "sweetalert2";
 import PropTypes from 'prop-types';
 import useToken from '../../useToken';
-
+import { instance } from '../../api';
 // async function loginUser(credentials) {
 //     return fetch('http://localhost:8080/login', {
 //       method: 'POST',
@@ -43,7 +43,7 @@ const Login = () => {
         }
 
         const checkLogin = async (user_name = data.user_name) => {
-            const response = await axios.get('http://localhost:8080/users/signup/check', { params: { user_name: user_name } });
+            const response = await instance.get('/users/signup/check', { params: { user_name: user_name } });
             if (!response.data) {
                 Swal.fire({
                     icon: 'error',
@@ -57,7 +57,7 @@ const Login = () => {
                     text: 'Invalid  password',
                 })
             } else {
-                axios.post('http://localhost:8080/login', data)
+                instance.post('/login', data)
                     .then(res => {
                         // console.log(res)
                         usedToken.setToken(res.data)

@@ -6,6 +6,7 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom'
 import useToken from '../../useToken';
 import Swal from "sweetalert2";
+import { instance } from "../../api";
 
 function Editactivities(props) {
     const [startDate, setStartDate] = useState(new Date());
@@ -26,7 +27,7 @@ function Editactivities(props) {
     // let date = new Date(activity.date)
 
     const getActivityID = async (activity = activity_id) => {
-        const response = await axios.get(`http://localhost:8080/activities/${activity}`);
+        const response = await instance.get(`/activities/${activity}`);
         setActivitys(response.data)
         if (response.data.date) {
             const date = new Date(response.data.date)
@@ -74,7 +75,7 @@ function Editactivities(props) {
             date: startDate,
             img: image
         };
-        axios.put(`http://localhost:8080/activities/${activity_id}`, data)
+        instance.put(`/activities/${activity_id}`, data)
             .then(
                 Swal.fire({
                     position: 'center',
@@ -113,7 +114,7 @@ function Editactivities(props) {
                                 <div className="test">
                                     <p className="label">SelectActivities</p>
                                     <select value={selectedType} onChange={e => setType(e.target.value)} >
-                                        <option value={selectedType}>Previous :{selectedType}</option>
+                                        <option value={activity.type}>Previous :{activity.type}</option>
                                         <option value="Running">Running</option>
                                         <option value="Jogging">Jogging</option>
                                         <option value="Jump Rope">Jump Rope</option>
