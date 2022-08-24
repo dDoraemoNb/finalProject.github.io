@@ -15,7 +15,7 @@ function AddActivities(props) {
   const [addTime, setTime] = useState();
   const [addType, setType] = useState();
 
-
+console.log(startDate)
   const navigate = useNavigate()
 
   
@@ -94,7 +94,7 @@ function AddActivities(props) {
                 <input
                   name="time"
                   type="time"
-                  placeholder="00:00"
+                  defaultValue={'00:00'}
                   onChange={(e) => setTime(e.target.value)}
                 />
               </div>

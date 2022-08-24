@@ -8,22 +8,27 @@ import Swal from 'sweetalert2';
 import axios from 'axios';
 
 const Activity = (props) => {
-    const [activities,setActivitys] = useState([]);
+    const [activities, setActivitys] = useState([]);
     const { token, setToken } = useToken();
+    const [dateRange, setDateRange] = useState([null, null]);
+    const [startDate, endDate] = dateRange;
+    const [searchType, setType] = useState();
+    console.log(startDate)
+    console.log(searchType)
     // const navigate = useNavigate();
-// console.log(props.limit)
+    // console.log(props.limit)
 
-const getListActivity = async (list) => {
-    setActivitys(list)
-}
+    const getListActivity = async (list) => {
+        setActivitys(list)
+    }
 
     const getactivities = async (user = token) => {
-        const response = await axios.get('http://localhost:8080/activities', { params: { user_id: user,limit:10 } })
+        const response = await axios.get('http://localhost:8080/activities', { params: { user_id: user, limit: 10 } })
 
         setActivitys(response.data)
     }
-    function handleDelete(e,params) {
-        
+    function handleDelete(e, params) {
+
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -42,20 +47,93 @@ const getListActivity = async (list) => {
                 axios.delete(`http://localhost:8080/activities/${params}`).then(
                     window.location.reload(false)
                 )
-               
+
             }
         })
-    } 
+    }
+
+    function handleSearch(e) {
+        e.preventDefault();
+
+        if (searchType && startDate && endDate) {
+            const data = {
+                type: searchType,
+                startDate: startDate,
+                endDate: endDate
+            }
+            const getActivityByAll = async () => {
+                const response = await axios.get(`http://localhost:8080/activities/search/all`, { params: data })
+                setActivitys(response.data)
+            }
+            getActivityByAll();
+
+        } else if (startDate) {//
+            if (endDate) {//
+                const data = {
+                    startDate: startDate,
+                    endDate: endDate
+                }
+                console.log(data)
+                const getActivityByDateEndDate = async () => {
+                    const response = await axios.get('http://localhost:8080/activities/search/dateEnd', { params: data })
+                    setActivitys(response.data)
+
+
+                }
+                getActivityByDateEndDate();
+
+
+            } else if (searchType) {//
+                const data = {
+                    startDate: startDate,
+                    type: searchType
+                }
+                const getActivityByDateType = async () => {
+                    const response = await axios.get(`http://localhost:8080/activities/search/datetype`, { params: data })
+                    setActivitys(response.data)
+                }
+                getActivityByDateType();
+            } else {//
+                const getActivityByDate = async () => {
+                    const response = await axios.get(`http://localhost:8080/activities/search/date`, { params: { date: startDate } })
+                    setActivitys(response.data)
+                }
+                getActivityByDate();
+            }
+
+
+        } else if (searchType) {//
+
+            const type = searchType
+
+            const getActivityByType = async () => {
+                const response = await axios.get(`http://localhost:8080/activities/search/type`, { params: { type: type } })
+                setActivitys(response.data)
+            }
+            getActivityByType();
+
+            // console.log(type)
+        } else {//
+            const getActivity = async (user = token) => {
+                const response = await axios.get('http://localhost:8080/activities', { params: { user_id: user, limit: 10 } })
+                setActivitys(response.data)
+            }
+            getActivity();
+
+        }
+
+    }
+
 
     useEffect(() => {
         getactivities()
         //request with limit
         //response limit
-        
+
     }, [])
 
 
-   
+
     return (
         <div className='main-web'>
 
@@ -63,7 +141,7 @@ const getListActivity = async (list) => {
                 <div>
                     <Navbar />
                 </div>
-                <ActivitySearch getList={getListActivity}/>
+                <ActivitySearch getList={setActivitys} search={handleSearch} setDateRange={setDateRange} endDate={endDate} startDate={startDate} setType={setType} />
                 <ActivitiesList Activity={activities} deleteactivity={handleDelete} />
             </div>
         </div>

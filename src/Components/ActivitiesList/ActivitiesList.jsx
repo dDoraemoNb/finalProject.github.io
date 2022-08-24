@@ -36,7 +36,7 @@ export const ActivitiesList = (props) => {
                                         <h4>
                                             {list.title}
                                         </h4>
-                                        <h3>08 Aug 2022</h3>
+                                        <h3>{new Date(list.date).toDateString()}</h3>
                                     </div>
                                 </div>
                                 <div>
@@ -49,7 +49,7 @@ export const ActivitiesList = (props) => {
                                 </div>
                                 <div class="activities-footer">
                                     <ul>
-                                        <li class='activities-list-description'>{list.time} MIN</li>
+                                        <li class='activities-list-description'>{list.time} Min.</li>
                                         <li class='description-btn'><Link to={`/edit-activities/${list._id}`} ><i class='bx bx-edit'></i></Link></li>
                                         <li class='description-btn'><a href="#" onClick={e => props.deleteactivity(e, list._id)}><i class='bx bxs-trash' ></i></a></li>
                                     </ul>
