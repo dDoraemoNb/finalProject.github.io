@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './Greeting.css';
-import winner from '../../../public/winner.svg'
+
 import useToken from '../../useToken';
 import axios from "axios";
 import { instance } from "../../api";
@@ -29,7 +29,7 @@ const Greeting=(props)=> {
                 </p>
             </div>
             <div class="reward-image">
-                <img src= {winner}/>
+                <img src="/winner.svg"/>
             </div>
         </div>
     );
