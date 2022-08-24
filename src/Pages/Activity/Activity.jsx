@@ -14,14 +14,17 @@ const Activity = (props) => {
     const [dateRange, setDateRange] = useState([null, null]);
     const [startDate, endDate] = dateRange;
     const [searchType, setType] = useState();
+
     const [page, setPage] = useState(1)
     const [pageCount, setPageCount] = useState(0)
     const limit = 10;
     // const [info, setInfo] = useState([])
+
     // console.log(startDate)
     // console.log(searchType)
     // const navigate = useNavigate();
     // console.log(props.limit)
+
     const lastIndex = page * limit;
     const firstIndex = lastIndex - limit;
     const info = activities.slice(firstIndex, lastIndex)
@@ -98,6 +101,7 @@ const Activity = (props) => {
                 const response = await instance.get(`/activities/search/all`, { params: { start: start, end: end, type: searchType } })
                 setActivitys(response.data)
                 setPage(1)
+
             }
             getActivityByAll();
 
@@ -112,7 +116,9 @@ const Activity = (props) => {
                 const getActivityByDateEndDate = async () => {
                     const response = await instance.get('/activities/search/dateEnd', { params: { start: start, end: end } })
                     setActivitys(response.data)
+
                     setPage(1)
+
 
                 }
                 getActivityByDateEndDate();
@@ -128,6 +134,7 @@ const Activity = (props) => {
                     const response = await instance.get(`/activities/search/datetype`, { params: { start: start, end: end, type: searchType } })
                     setActivitys(response.data)
                     setPage(1)
+
                 }
                 getActivityByDateType();
             } else {//
@@ -154,6 +161,7 @@ const Activity = (props) => {
                 const response = await instance.get(`/activities/search/type`, { params: { type: type } })
                 setActivitys(response.data)
                 setPage(1)
+
             }
             getActivityByType();
 
@@ -188,6 +196,7 @@ const Activity = (props) => {
                     <Navbar />
                 </div>
 
+
                 <ActivitySearch
                     getList={setActivitys}
                     search={handleSearch}
@@ -212,6 +221,7 @@ const Activity = (props) => {
                     <button className='pagination' disabled={page === 1} onClick={handlePrevious}>Previous</button>
                     <button className='pagination' disabled={page === lastPage} onClick={handleNext}>Next</button>
                 </div>
+
             </div>
         </div>
     )
