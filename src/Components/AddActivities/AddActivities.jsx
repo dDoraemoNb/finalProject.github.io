@@ -4,7 +4,8 @@ import DatePicker from "react-datepicker";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'
 import useToken from '../../useToken';
-
+import { instance } from '../../api'
+import Swal from "sweetalert2";
 
 function AddActivities(props) {
   const [startDate, setStartDate] = useState(new Date());
@@ -15,7 +16,7 @@ function AddActivities(props) {
   const [addTime, setTime] = useState();
   const [addType, setType] = useState();
 
-  console.log(startDate)
+  // console.log(startDate)
   const navigate = useNavigate()
 
 
@@ -53,7 +54,21 @@ function AddActivities(props) {
       date: startDate,
       img: image
     };
-    axios.post('http://fit2b-backend.vercel.app/activities/create', data).then(navigate('/activity')
+    instance.post('/activities/create', data)
+    .then(() => Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: true,
+      }).then((result) => {
+        if (result.isConfirmed) {
+
+          navigate('/activity')
+
+
+        }
+
+      })
     )
 
   };

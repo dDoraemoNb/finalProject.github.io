@@ -49,7 +49,7 @@ const Signup = (props) => {
                     text: 'Passwords do not match.',
                 })
             } else {
-                instance.post('/users/signup', data).then(
+                instance.post('/users/signup', data).then(()=>
                     Swal.fire({
                         position: 'center',
                         icon: 'success',

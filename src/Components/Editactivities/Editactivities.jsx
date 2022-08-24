@@ -76,7 +76,7 @@ function Editactivities(props) {
             img: image
         };
         instance.put(`/activities/${activity_id}`, data)
-            .then(
+            .then(()=>
                 Swal.fire({
                     position: 'center',
                     icon: 'success',

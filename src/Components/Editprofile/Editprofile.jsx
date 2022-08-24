@@ -63,7 +63,7 @@ const Editprofile = (props) => {
                         weight: weight,
                         birthday: startDate,
                     }
-                    instance.put(`/users/user/${token}`, data).then()
+                    instance.put(`/users/user/${token}`, data)
                 }
             })
         } else if (password !== confirmPassword) {
@@ -98,7 +98,7 @@ const Editprofile = (props) => {
                         weight: weight,
                         birthday: startDate,
                     }
-                    instance.put(`/users/user/${token}`, data).then()
+                    instance.put(`/users/user/${token}`, data)
                 }
             })
         }
