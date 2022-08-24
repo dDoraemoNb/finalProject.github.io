@@ -48,3 +48,13 @@ textarea{
     margin: 3rem 2rem;
     border: none;
 }
+.test {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.label {
+    margin-right: 5px;
+}

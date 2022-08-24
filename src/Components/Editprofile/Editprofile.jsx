@@ -4,6 +4,7 @@ import useToken from '../../useToken';
 import axios from 'axios';
 import DatePicker from "react-datepicker";
 import Swal from "sweetalert2";
+import { instance } from "../../api";
 
 const Editprofile = (props) => {
     const { token, setToken } = useToken();
@@ -20,7 +21,7 @@ const Editprofile = (props) => {
 
 
     const getProfile = async (user = token) => {
-        const response = await axios.get('http://localhost:8080/users/user', { params: { user_id: user } });
+        const response = await instance.get('/users/user', { params: { user_id: user } });
         // console.log(response.data)
         if (response.data.birthday) {
             const date = new Date(response.data.birthday)
@@ -62,7 +63,7 @@ const Editprofile = (props) => {
                         weight: weight,
                         birthday: startDate,
                     }
-                    axios.put(`http://localhost:8080/users/user/${token}`, data).then()
+                    instance.put(`/users/user/${token}`, data).then()
                 }
             })
         } else if (password !== confirmPassword) {
@@ -97,7 +98,7 @@ const Editprofile = (props) => {
                         weight: weight,
                         birthday: startDate,
                     }
-                    axios.put(`http://localhost:8080/users/user/${token}`, data).then()
+                    instance.put(`/users/user/${token}`, data).then()
                 }
             })
         }

@@ -3,11 +3,13 @@ import './Greeting.css';
 import winner from '../../../public/winner.svg'
 import useToken from '../../useToken';
 import axios from "axios";
+import { instance } from "../../api";
+
 const Greeting=(props)=> {
     const { token, setToken } = useToken();
     const [profile, setProfile] = useState({});
     const getProfile = async (user = token) => {
-        const response = await axios.get('http://localhost:8080/users/user', { params: { user_id: user } });
+        const response = await instance.get('/users/user', { params: { user_id: user } });
         // console.log(response.data)
         setProfile(response.data)
         

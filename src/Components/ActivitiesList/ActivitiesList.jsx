@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 
 // props pageninate = false
 export const ActivitiesList = (props) => {
-    console.log(props.Activity)
+    //console.log(props.Activity)
 
     if (props.Activity[0] === undefined) {
         return (

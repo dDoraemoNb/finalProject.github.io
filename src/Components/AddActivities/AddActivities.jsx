@@ -15,32 +15,32 @@ function AddActivities(props) {
   const [addTime, setTime] = useState();
   const [addType, setType] = useState();
 
-console.log(startDate)
+  console.log(startDate)
   const navigate = useNavigate()
 
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     let image = ''
-    if (addType==='Running') {
-        image = '010'
+    if (addType === 'Running') {
+      image = '010'
 
-    }else if (addType==='Jogging') {
-        image = '014'
+    } else if (addType === 'Jogging') {
+      image = '014'
 
-    }else if (addType==='Walking') {
-        image = '010'
+    } else if (addType === 'Walking') {
+      image = '010'
 
-    }else if (addType==='Yoga') {   
-        image = '012'
+    } else if (addType === 'Yoga') {
+      image = '012'
 
 
-    }else if (addType==='Jump Rope') {   
-        image = '006'
+    } else if (addType === 'Jump Rope') {
+      image = '006'
 
-    }else if (addType==='Weight Training') {
-        image = '001'
+    } else if (addType === 'Weight Training') {
+      image = '001'
     }
 
 
@@ -53,7 +53,7 @@ console.log(startDate)
       date: startDate,
       img: image
     };
-    axios.post('http://localhost:8080/activities/create',data).then(navigate('/activity')
+    axios.post('http://fit2b-backend.vercel.app/activities/create', data).then(navigate('/activity')
     )
 
   };
@@ -72,31 +72,39 @@ console.log(startDate)
                 onChange={(e) => setTitle(e.target.value)} //
               />
               <div className="selectActivity">
-                <label for="type_activity">Type</label>
-                <select
-                  onChange={(e) => setType(e.target.value)}
-                  name="type_activity"
-                  id="dropdown"
-                >
-                  <option value=""> -----------</option>
-                  <option value="Running">Running</option>
-                  <option value="Jogging">Jogging</option>
-                  <option value="Jump Rope">Jump Rope</option>
-                  <option value="Weight Training">Weight Training</option>
-                  <option value="Walking">Walking</option>
-                  <option value="Yoga">Yoga</option>
-                </select>
-                <DatePicker
-                  selected={startDate}
-                  onChange={(date) => setStartDate(date)}
-                  maxDate={new Date()}
-                />
-                <input
-                  name="time"
-                  type="time"
-                  defaultValue={'00:00'}
-                  onChange={(e) => setTime(e.target.value)}
-                />
+                <div className="test">
+                  <p className="label">SelectActivities</p>
+                  <select
+                    onChange={(e) => setType(e.target.value)}
+                    name="type_activity"
+                    id="dropdown"
+                  >
+                    <option value=""> -----------</option>
+                    <option value="Running">Running</option>
+                    <option value="Jogging">Jogging</option>
+                    <option value="Jump Rope">Jump Rope</option>
+                    <option value="Weight Training">Weight Training</option>
+                    <option value="Walking">Walking</option>
+                    <option value="Yoga">Yoga</option>
+                  </select>
+                </div>
+                <div className="test">
+                  <p className="label">DATE</p>
+                  <DatePicker
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                    maxDate={new Date()}
+                  />
+                </div>
+                <div className="test">
+                  <p className="label">Time</p>
+                  <input
+                    name="time"
+                    type="time"
+                    defaultValue={'00:00'}
+                    onChange={(e) => setTime(e.target.value)}
+                  />
+                </div>
               </div>
             </div>
             <br />

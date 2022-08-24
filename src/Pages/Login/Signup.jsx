@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import Swal from "sweetalert2";
+import { instance } from "../../api";
 
 const Signup = (props) => {
     const [startDate, setStartDate] = useState(new Date());
@@ -34,7 +35,7 @@ const Signup = (props) => {
         };
 
         const check = async (user_name = data.user_name) => {
-            const response = await axios.get('http://localhost:8080/users/signup/check', { params: { user_name: user_name } });
+            const response = await instance.get('/users/signup/check', { params: { user_name: user_name } });
             if (response.data) {
                 Swal.fire({
                     icon: 'error',
@@ -48,7 +49,7 @@ const Signup = (props) => {
                     text: 'Passwords do not match.',
                 })
             } else {
-                axios.post('http://localhost:8080/users/signup', data).then(
+                instance.post('/users/signup', data).then(
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
