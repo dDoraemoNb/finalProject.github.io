@@ -136,4 +136,19 @@
     border-top-right-radius: 10px;
     align-items: center;
     font-size: 2rem;
+    color: white;
+}
+.pagination{
+    background-color: rgba(248, 118, 61, 1);
+    color: white;
+    padding: 14px 20px;
+    margin: 15px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+   
+}
+button:disabled.pagination{
+    background-color: rgb(255, 207, 187);
 }

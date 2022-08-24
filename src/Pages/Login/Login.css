@@ -45,7 +45,7 @@
     text-align: center;
   }
 
-  #input-signup input[type=text],#input-signup input[type=password] {
+  #input-signup input[type=text],#input-signup input[type=password],#input-signup input[type=email] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;

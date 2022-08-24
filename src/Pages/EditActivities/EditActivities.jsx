@@ -1,7 +1,7 @@
 import Editactivities from "../../Components/Editactivities/Editactivities";
 import Navbar from "../../Components/Navbar/Navbar";
 import React from "react";
-import "./Editactivities.css"
+import "./EditActivities.css"
 
 const Editactivity = (props) => {
     return (

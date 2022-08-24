@@ -8,21 +8,23 @@ import Swal from 'sweetalert2';
 
 // props pageninate = false
 export const ActivitiesList = (props) => {
-    console.log(props.Activity)
+    //console.log(props.Activity)
 
     if (props.Activity[0] === undefined) {
         return (
             <div className="activities-list">
-                
-                    <div className='noObject'>
-                     <h2> NO ACTIVITY</h2>
-                    </div>
-                
+                <div className='noObject'>
+                    <h2> NO ACTIVITY</h2>
+                </div>
+
             </div>
         )
     }
+
+
     return (
         <div className="activities-list">
+            
             {
 
                 props.Activity.map(list => {
@@ -36,7 +38,7 @@ export const ActivitiesList = (props) => {
                                         <h4>
                                             {list.title}
                                         </h4>
-                                        <h3>08 Aug 2022</h3>
+                                        <h3>{new Date(list.date).toDateString()}</h3>
                                     </div>
                                 </div>
                                 <div>
@@ -45,11 +47,11 @@ export const ActivitiesList = (props) => {
                             </div>
                             <div className="activities-description">
                                 <div className="activities-list-description">
-                                <p> {list.description} </p>
+                                    <p> {list.description} </p>
                                 </div>
                                 <div class="activities-footer">
                                     <ul>
-                                        <li class='activities-list-description'>{list.time} MIN</li>
+                                        <li class='activities-list-description'>{list.time} Min.</li>
                                         <li class='description-btn'><Link to={`/edit-activities/${list._id}`} ><i class='bx bx-edit'></i></Link></li>
                                         <li class='description-btn'><a href="#" onClick={e => props.deleteactivity(e, list._id)}><i class='bx bxs-trash' ></i></a></li>
                                     </ul>
@@ -59,6 +61,7 @@ export const ActivitiesList = (props) => {
                     )
                 })
             }
+            
         </div>
     );
 }

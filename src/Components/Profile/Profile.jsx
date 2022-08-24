@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import './Profile.css'
 import useToken from '../../useToken';
 import axios from 'axios';
-
+import { instance } from '../../api';
 // import imgProfile from './ab67706c0000bebbb1940ea8c5d86f564b684597.jpg'
 
 const Profile = (props) => {
@@ -12,7 +12,7 @@ const Profile = (props) => {
         { firstName: 'Aman', lastName: 'Stickman', imgProfile: '001', birthday: "1900-10-28", height: 185, weight: 65 }
       );
     const getProfile = async (user = token) => {
-        const response = await axios.get('http://localhost:8080/users/user', { params: { user_id: user } });
+        const response = await instance.get('/users/user', { params: { user_id: user } });
         // console.log(response.data)
         setProfile(response.data)
         
@@ -38,7 +38,7 @@ const Profile = (props) => {
     }
     return age;
 }
-let imgprofile = `../public/${profile.imgProfile}`;
+let imgprofile = `/${profile.imgProfile}`;
 
     return (
         <div className="profile">

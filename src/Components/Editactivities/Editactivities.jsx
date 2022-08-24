@@ -6,6 +6,7 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom'
 import useToken from '../../useToken';
 import Swal from "sweetalert2";
+import { instance } from "../../api";
 
 function Editactivities(props) {
     const [startDate, setStartDate] = useState(new Date());
@@ -20,12 +21,13 @@ function Editactivities(props) {
     // const [updateType, setupdateType] = useState();
 
 
+
     const navigate = useNavigate()
 
     // let date = new Date(activity.date)
 
     const getActivityID = async (activity = activity_id) => {
-        const response = await axios.get(`http://localhost:8080/activities/${activity}`);
+        const response = await instance.get(`/activities/${activity}`);
         setActivitys(response.data)
         if (response.data.date) {
             const date = new Date(response.data.date)
@@ -73,23 +75,23 @@ function Editactivities(props) {
             date: startDate,
             img: image
         };
-        axios.put(`http://localhost:8080/activities/${activity_id}`, data)
-        .then(
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Your work has been saved',
-                showConfirmButton: true,
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    
+        instance.put(`/activities/${activity_id}`, data)
+            .then(
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Your work has been saved',
+                    showConfirmButton: true,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+
                         navigate('/activity')
-                    
-                    
-                }
-                
-            })
-        )
+
+
+                    }
+
+                })
+            )
 
     };
 
@@ -112,22 +114,22 @@ function Editactivities(props) {
                                 <div className="test">
                                     <p className="label">SelectActivities</p>
                                     <select value={selectedType} onChange={e => setType(e.target.value)} >
-                                        <option value=""> -----------</option>
+                                        <option value={activity.type}>Previous :{activity.type}</option>
                                         <option value="Running">Running</option>
                                         <option value="Jogging">Jogging</option>
-                                        <option value="Hikking">Hikking</option>
-                                        <option value="Swimming">Swimming</option>
+                                        <option value="Jump Rope">Jump Rope</option>
+                                        <option value="Weight Training">Weight Training</option>
                                         <option value="Walking">Walking</option>
                                         <option value="Yoga">Yoga</option>
                                     </select>
                                 </div>
                                 <div className="test">
                                     <p className="label">DATE</p>
-                                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} maxDate={new Date()} />
+                                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} maxDate={new Date()} />
                                 </div>
                                 <div className="test">
                                     <p className="label">TIME</p>
-                                <input type="time" placeholder="00:00" defaultValue={activity.time} onChange={e => setupdateTime(e.target.value)} />
+                                    <input type="time" placeholder="00:00" defaultValue={activity.time} onChange={e => setupdateTime(e.target.value)} />
                                 </div>
 
                             </div>

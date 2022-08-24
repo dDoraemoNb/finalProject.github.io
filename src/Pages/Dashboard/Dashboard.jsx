@@ -7,14 +7,14 @@ import './Dashboard.css'
 import ActivitiesList from '../../Components/ActivitiesList/ActivitiesList'
 import axios from 'axios'
 import useToken from '../../useToken'
-
+import { instance } from '../../api'
 
 const Dashboard = (props) => {
     const [activities,setActivitys] = useState([]);
     const { token, setToken } = useToken();
 
     const getactivities = async (user = token) => {
-        const response = await axios.get('http://localhost:8080/activities', { params: { user_id: user,limit:5 } })
+        const response = await instance.get('/activities', { params: { user_id: user,limit:5 } })
 
         setActivitys(response.data)
     }
