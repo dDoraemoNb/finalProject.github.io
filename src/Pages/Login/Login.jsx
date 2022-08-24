@@ -76,7 +76,7 @@ const Login = () => {
                 <div className='login-form'>
                     <form onSubmit={handleSubmit}>
                         <div className="imgcontainer">
-                            <img src="../../../public/img_avatar2 .png" alt="Avatar" className="avatar" />
+                            <img src="/img_avatar2 .png" alt="Avatar" className="avatar" />
                         </div>
 
                         <div className="container">

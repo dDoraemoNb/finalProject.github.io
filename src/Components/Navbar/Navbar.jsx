@@ -18,13 +18,13 @@ const Navbar = () => {
     }
     return (
         <div className="header">
-            <img src='../../../public/fit2B_logo_light.svg' className="logo" alt="logo" />
+            <img src='/fit2B_logo_light.svg' className="logo" alt="logo" />
             <nav className="Navbar">
-                <Link to="/"><img src='../../../public/MenuIcons/home.svg' className="navMenu" alt="homeIcon" /></Link>
-                {/* <a href="#"><img src='../../../public/MenuIcons/challenge.svg' className="navMenu" alt="challengeIcon" /></a> */}
-                <Link to="/activity"><img src='../../../public/MenuIcons/activities.svg' className="navMenu" alt="activitiesIcon" /></Link>
-                <Link to="/edit-profile"><img src='../../../public/MenuIcons/setting.svg' className="navMenu" alt="settingIcon" /></Link>
-                <a onClick={handleLogout} ><img src='../../../public/MenuIcons/logout.svg' className="navMenu" alt="logoutIcon" /></a>
+                <Link to="/"><img src='/MenuIcons/home.svg' className="navMenu" alt="homeIcon" /></Link>
+                {/* <a href="#"><img src='/MenuIcons/challenge.svg' className="navMenu" alt="challengeIcon" /></a> */}
+                <Link to="/activity"><img src='/MenuIcons/activities.svg' className="navMenu" alt="activitiesIcon" /></Link>
+                <Link to="/edit-profile"><img src='/MenuIcons/setting.svg' className="navMenu" alt="settingIcon" /></Link>
+                <a onClick={handleLogout} ><img src='/MenuIcons/logout.svg' className="navMenu" alt="logoutIcon" /></a>
             </nav>
         </div>
     );

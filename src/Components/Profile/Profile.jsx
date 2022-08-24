@@ -38,7 +38,7 @@ const Profile = (props) => {
     }
     return age;
 }
-let imgprofile = `../public/${profile.imgProfile}`;
+let imgprofile = `/${profile.imgProfile}`;
 
     return (
         <div className="profile">

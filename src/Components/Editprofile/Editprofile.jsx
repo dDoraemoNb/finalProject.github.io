@@ -110,7 +110,7 @@ const Editprofile = (props) => {
         // getdetail()
     }, []);
 
-    let imgprofile = `../public/${profile.imgProfile}`;
+    let imgprofile = `/${profile.imgProfile}`;
     return (
         <div className="main-editprofile">
             <div className="bg">
