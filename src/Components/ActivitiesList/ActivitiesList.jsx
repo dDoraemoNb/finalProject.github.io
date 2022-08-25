@@ -51,7 +51,7 @@ export const ActivitiesList = (props) => {
                                 </div>
                                 <div class="activities-footer">
                                     <ul>
-                                        <li class='activities-list-description timeText'>SPEND TIME : {list.time} min.</li>
+                                        <li class='activities-list-description timeText'>SPEND TIME : {list.time} hours.</li>
                                         <li class='description-btn'><Link to={`/edit-activities/${list._id}`} ><i class='bx bx-edit'></i></Link></li>
                                         <li class='description-btn'><a href="#" onClick={e => props.deleteactivity(e, list._id)}><i class='bx bxs-trash' ></i></a></li>
                                     </ul>
