@@ -112,7 +112,7 @@ function AddActivities(props) {
                   />
                 </div>
                 <div className="test">
-                  <p className="label">Time</p>
+                  <p className="label">SPEND TIME</p>
                   <input
                     name="time"
                     type="time"
